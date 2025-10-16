@@ -1,0 +1,1345 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+ <!--hero section for image banner starts here-->
+
+    <!-- <section class="hero video-hero">
+      <video
+        autoplay=""
+        muted=""
+        loop=""
+        playsinline=""
+        preload="auto"
+        class="svg-background banner-video"
+        poster=""
+        style="
+          background-image: url('images/zwmZqJXVW0Gwr0yUS9Zg.jpg');
+          background-size: cover;
+        "
+      >
+        <source src="{% static 'media/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="container-fluid">
+        <div class="banner" style="text-align: center">
+          <div
+            class="banner-content"
+            style="align-items: center; text-align: center"
+          >
+            <h1>Find the world’s best universities and scholarships</h1>
+            <div
+              class="d-flex flex-column flex-nowrap align-items-center justify-content-center gap-4"
+            >
+              <p>Effortlessly with us!</p>
+              <div>
+                <a href="" target="_blank" class="btn-hero">
+                  <span>Apply Now</span>
+                  <svg
+                    class="external-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section
+      class="banner-hero"
+      data-sal="fade"
+      data-sal-duration="600"
+      data-sal-delay="100"
+      data-sal-easing="ease"
+    >
+      <img src="{% static 'images/banner.jpg' %}" alt="banner" class="img-fluid" />
+    </section>
+    <!--hero section for video banner ends here-->
+
+    <!--upcoming event section starts here-->
+    <!-- <div
+      class="container-fluid"
+      data-sal="fade"
+      data-sal-duration="500"
+      data-sal-delay="100"
+      data-sal-easing="ease-in-out"
+    >
+      <div class="upcoming-events d-block">
+        <div class="row align-items-center g-3">
+          <div class="col-sm-2">
+            <h3 class="text-center fw-bold">
+              <p class="p-0 m-0 text-center">Recent</p>
+              EVENTS
+            </h3>
+          </div>
+          <div class="col-sm-4 d-flex flex-row column-gap-3">
+            <div class="date-box">
+              <span class="day">07</span>
+              <span class="month">Nov</span>
+            </div>
+            <div class="event-content">
+              <h4 class="limit-words-7">University of Greenwich ,UK</h4>
+              <a href="" class="event-btn">
+                <span class="text-decoration-underline">View Details</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4 d-flex flex-row column-gap-3">
+            <div class="date-box">
+              <span class="day">07</span>
+              <span class="month">Nov</span>
+            </div>
+            <div class="event-content">
+              <h4 class="limit-words-7">University of Greenwich ,UK</h4>
+              <a href="" class="event-btn">
+                <span class="text-decoration-underline">View Details</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <a href="" class="view-btn m-0 p-0">
+              <span class="text-decoration-underline">More Events</span>
+              <svg
+                class="external-arrow"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!--upcoming event section ends here-->
+
+    <div
+      class="aboutus mt-2 py-3"
+      data-sal="fade"
+      data-sal-duration="600"
+      data-sal-delay="100"
+      data-sal-easing="ease"
+    >
+      <div class="container-fluid">
+        <div class="row g-5 ">
+            <div
+            class="col-sm-5 recent-event px-5 py-4"
+            style="background-color: #e0eafc; border-radius: 10px 10px 0 0;"
+             data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-delay="200"
+
+          >
+            <h2 class="mb-0 fw-bold pt-3 footer-heading">
+              Recent <span style="color: var(--color-primary)">Events</span>
+            </h2>
+            <a href="">
+              <div class="d-flex gap-4 recent my-3 align-items-center">
+                <div class="">
+                  <h1 class="m-0 p-0 text-success">12</h1>
+                  <h4 class="m-0 pb-1 pt-0">MAY</h4>
+                  <p style="height: 2px; background-color: green"></p>
+                </div>
+                <div class="">
+                  <h3>Udaan New Zealand Application Day</h3>
+                  <p>
+                    <i class="bi bi-clock" style="color: green"></i>
+                    <span style="color: green"> 10:00 AM - 6:00 PM</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <a href="">
+              <div class="d-flex gap-4 recent my-3 align-items-center">
+                <div class="">
+                  <h1 class="m-0 p-0 text-success">20</h1>
+                  <h4 class="m-0 pb-1 pt-0">AUG</h4>
+                  <p style="height: 2px; background-color: green"></p>
+                </div>
+                <div class="">
+                  <h3>International Education Fair – Dwarka</h3>
+                  <p>
+                    <i class="bi bi-clock" style="color: green"></i>
+                    <span style="color: green"> 10:00 AM - 6:00 PM</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <a href="">
+              <div class="d-flex gap-4 recent my-3 align-items-center">
+                <div class="">
+                  <h1 class="m-0 p-0 text-success">10</h1>
+                  <h4 class="m-0 pb-1 pt-0">SEP</h4>
+                  <p style="height: 2px; background-color: green"></p>
+                </div>
+                <div class="">
+                  <h3>Grace Edufair 2023</h3>
+                  <p>
+                    <i class="bi bi-clock" style="color: green"></i>
+                    <span style="color: green"> 10:00 AM - 6:00 PM</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-7 about-content py-4"  data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-delay="200">
+            <h2 class="mb-0 fw-bold pt-3 footer-heading">
+              About
+              <span style="color: var(--color-primary)">KIC Education</span>
+            </h2>
+            <p class="mt-3" style="text-align: justify;">
+               At KIC Education, we are passionate about transforming students’ dreams of studying abroad into reality. With years of experience and a strong network of global institutions, we provide expert guidance every step of the way — from selecting the right course and university to completing applications and securing admissions. Our team of professional counselors takes a personalized approach to understand each student’s goals, ensuring a smooth and stress-free process.
+            </p>
+            <p class="mt-3" style="text-align: justify;">
+              Beyond admissions, we also offer support with visa applications, test preparation, accommodation, and pre-departure briefings, making the entire journey seamless and fulfilling. Our unwavering commitment to quality service and student success has earned us the reputation of being a trusted name in international education. Join KIC Education today and take your first confident step toward a world of global opportunities and a brighter future.
+            </p>
+            <a href="aboutus.html" class="btn-custom mt-3">
+              <span>Read More</span>
+              <svg
+                class="external-arrow"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
+                ></path>
+              </svg>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+
+    <!--study destination section starts-->
+
+    <div
+      class="study-destination overflow-hidden p-40"
+      style="background-color: #f4f6f7c3"
+      data-sal="slide-up"
+      data-sal-duration="500"
+      data-sal-delay="100"
+      data-sal-easing="ease-in-out"
+    >
+      <div class="container-fluid">
+        <h2 class="text-center mb-0">
+          Top
+          <span style="color: var(--color-primary)">Study</span> Destinations
+        </h2>
+        <p class="text-center mb-4 mt-2 px-4" style="font-size: 14px">
+          Discover world-class education opportunities across leading countries
+          with top-ranked universities and diverse academic programs.
+        </p>
+        <div class="country-slider row slick-e d-flex flex-row">
+          <div class="col-md-2 col-sm-4 col-6 py-3">
+            <a href="university-details.html">
+              <div class="country-box">
+                <div class="country-image">
+                  <img src="{% static 'images/USA.png' %}" alt="USA" />
+                </div>
+                <h4 class="country-name">USA</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6 py-3">
+            <a href="university-details.html">
+              <div class="country-box">
+                <div class="country-image">
+                  <img src="{% static 'images/uk.png' %}" alt="UK" />
+                </div>
+                <h4 class="country-name">UK</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6 py-3">
+            <a href="university-details.html">
+              <div class="country-box">
+                <div class="country-image">
+                  <img src="{% static 'images/USA.png' %}" alt="USA" />
+                </div>
+                <h4 class="country-name">USA</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6 py-3">
+            <a href="university-details.html">
+              <div class="country-box">
+                <div class="country-image">
+                  <img src="{% static 'images/uk.png' %}" alt="UK" />
+                </div>
+                <h4 class="country-name">UK</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6 py-3">
+            <a href="university-details.html">
+              <div class="country-box">
+                <div class="country-image">
+                  <img src="{% static 'images/austrila.png' %}" alt="Australia" />
+                </div>
+                <h4 class="country-name">Australia</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6 py-3">
+            <a href="university-details.html">
+              <div class="country-box">
+                <div class="country-image">
+                  <img src="{% static 'images/newland.png' %}" alt="New Zealand" />
+                </div>
+                <h4 class="country-name">New Zealand</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6 py-3">
+            <a href="university-details.html">
+              <div class="country-box">
+                <div class="country-image">
+                  <img src="{% static 'images/USA.png' %}" alt="USA" />
+                </div>
+                <h4 class="country-name">USA</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- <div class="d-flex justify-content-center my-4">
+          <a href="" class="btn-custom">
+            <span>Apply Now</span>
+            <svg
+              class="external-arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
+              ></path>
+            </svg>
+          </a>
+        </div> -->
+      </div>
+    </div>
+
+    <!--study destination section ends-->
+
+    <!--counsellor profile section-->
+    <div
+      class="counsellor-section overflow-hidden"
+      data-sal="fade"
+      data-sal-duration="600"
+      data-sal-delay="100"
+      data-sal-easing="ease"
+    >
+      <div class="container-fluid">
+        <h2 class="text-center mb-0 mt-2">
+          Book
+          <span style="color: var(--color-primary)">Free Expert</span>
+          Counseling
+        </h2>
+        <p class="text-center mb-4 mt-2 px-4" style="font-size: 14px">
+          Get personalized guidance from our experienced education consultants.
+        </p>
+        <div class="counsellor-slider slick-d">
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://media.istockphoto.com/id/2192763762/photo/indian-siblings-playing-with-an-educational-globe-at-home-discovering-countries-in-a-playful.webp?a=1&b=1&s=612x612&w=0&k=20&c=KyMtp_VF6LEjMIn0_PlX3A1inrtq6mf9ye9WcxuMwKo="
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-0">
+                  Dharmendra Kumar Ram
+                </h5>
+                <p class="text-center p-0 m-0 fst-italic mb-1">Developer</p>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+                <a href="#" class="btn btn-primary">View More Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://media.istockphoto.com/id/2192763801/photo/indian-siblings-exploring-creativity-by-painting-on-a-canvas-at-home-using-brushes-and-colours.webp?a=1&b=1&s=612x612&w=0&k=20&c=tawBsPnwR069JK_odyh_gQizs_iKH1eS7OsbjaVQpMA="
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-0">
+                  Dharmendra Kumar Ram
+                </h5>
+                <p class="text-center p-0 m-0 fst-italic mb-1">Developer</p>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+                <a href="#" class="btn btn-primary">View More Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://media.istockphoto.com/id/2212836900/photo/happy-rural-indian-father-and-little-daughter-in-school-uniform-hug-love-and-bonding.webp?a=1&b=1&s=612x612&w=0&k=20&c=xn6R37e716Ravi3VL3RhjCq37N0_iuQtTnx6eo9n6hg="
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-0">
+                  Dharmendra Kumar Ram
+                </h5>
+                <p class="text-center p-0 m-0 fst-italic mb-1">Developer</p>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+                <a href="#" class="btn btn-primary">View More Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://media.istockphoto.com/id/2188956898/photo/indian-family-encouraging-savings-together-highlighting-a-piggy-bank-in-a-modern-living-room.webp?a=1&b=1&s=612x612&w=0&k=20&c=cPFsTCK_6MQn-SQ1KLCR0uZdS-UDfyD8g5XOepiIYts="
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-0">
+                  Dharmendra Kumar Ram
+                </h5>
+                <p class="text-center p-0 m-0 fst-italic mb-1">Developer</p>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+                <a href="#" class="btn btn-primary">View More Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://media.istockphoto.com/id/2192763801/photo/indian-siblings-exploring-creativity-by-painting-on-a-canvas-at-home-using-brushes-and-colours.webp?a=1&b=1&s=612x612&w=0&k=20&c=tawBsPnwR069JK_odyh_gQizs_iKH1eS7OsbjaVQpMA="
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center mb-0">
+                  Dharmendra Kumar Ram
+                </h5>
+                <p class="text-center p-0 m-0 fst-italic mb-1">Developer</p>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+                <a href="#" class="btn btn-primary">View More Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--counsellor profile section-->
+
+    <!--Our services section starts-->
+
+    <div
+      class="services py-3"
+      data-sal="fade"
+      style="background-color: #f4f6f7c3"
+      data-sal-duration="600"
+      data-sal-delay="100"
+      data-sal-easing="ease"
+    >
+      <div class="container-fluid">
+        <h2 class="text-center mb-0">
+          Amazing
+          <span style="color: var(--color-primary)">Services & Features </span>
+          For You
+        </h2>
+        <p class="text-center mb-2 mt-2 px-4" style="font-size: 14px">
+          Comprehensive education services to support your study abroad journey
+          from start to finish.
+        </p>
+        <div class="row g-4 my-3">
+          <div
+            class="col-lg-3"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="100"
+            data-sal-easing="ease-in-out"
+          >
+            <div class="service-item h-100 d-flex flex-column">
+              <img src="{% static 'images/service/service-icon-01.png' %}" alt="" />
+              <h4 class="py-2 mb-0 mt-2">App Maintenance</h4>
+              <p class="flex-grow-1">
+                You are not allowed to redistribute this template ZIP file on
+                any other website.
+              </p>
+              <div class="text-button mt-1">
+                <a href="service-details.html"
+                  >Read More <i class="fa fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="200"
+            data-sal-easing="ease-in-out"
+          >
+            <div class="service-item second-service h-100 d-flex flex-column">
+              <img src="{% static 'images/service/service-icon-02.png' %}" alt="" />
+              <h4 class="py-2 mb-0 mt-2">Rocket Speed of App</h4>
+              <p class="flex-grow-1">
+                You are allowed to use the Chain App Dev HTML template. Feel
+                free to modify or edit this layout.
+              </p>
+              <div class="text-button">
+                <a href="service-details.html"
+                  >Read More <i class="fa fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="300"
+            data-sal-easing="ease-in-out"
+          >
+            <div class="service-item third-service h-100 d-flex flex-column">
+              <img src="{% static 'images/service/service-icon-03.png' %}" alt="" />
+              <h4 class="py-2 mb-0 mt-2">Multi Workflow Idea</h4>
+              <p class="flex-grow-1">
+                If this template is beneficial for your work, please support us
+                <a
+                  rel="nofollow"
+                  href="https://paypal.me/templatemo"
+                  target="_blank"
+                  >a little via PayPal</a
+                >. Thank you.
+              </p>
+              <div class="text-button">
+                <a href="service-details.html"
+                  >Read More <i class="fa fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3"
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="400"
+            data-sal-easing="ease-in-out"
+          >
+            <div class="service-item fourth-service h-100 d-flex flex-column">
+              <img src="{% static 'images/service/service-icon-01.png' %}" alt="" />
+              <h4 class="py-2 mb-0 mt-2">24/7 Help &amp; Support</h4>
+              <p class="flex-grow-1">
+                Lorem ipsum dolor consectetur adipiscing elit sedder
+                williamsburg photo booth quinoa and fashion axe.
+              </p>
+              <div class="text-button">
+                <a href="service-details.html"
+                  >Read More <i class="fa fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Our services section ends-->
+
+    <!--offer section starts here-->
+    <div
+      id="pricing"
+      class="pricing-tables offers"
+      data-sal="fade"
+      data-sal-duration="500"
+      data-sal-delay="100"
+      data-sal-easing="ease-in-out"
+    >
+      <div class="container-fluid py-2">
+        <div class="row pb-5 g-4">
+          <div class="col-lg-8 offset-lg-2">
+            <h2 class="text-center mt-4 mb-0">
+              Seasonal
+              <span style="color: var(--color-primary)">Deals</span>
+              – Grab Now!
+            </h2>
+            <p class="text-center mb-4 mt-2 px-4" style="font-size: 14px">
+              Limited-time offers on education services and university
+              applications. Don't miss out!
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <div class="pricing-item-regular">
+              <span class="price">40%</span>
+              <h4>Big saving !</h4>
+              <div class="icon">
+                <img src="{% static '/images/USA.png' %}" alt="" />
+              </div>
+              <ul>
+                <li>Lorem Ipsum Dolores</li>
+                <li class="non-function">Life-time Support</li>
+                <li class="non-function">Premium Add-Ons</li>
+              </ul>
+              <div class="border-button">
+                <a href="" class="apply_now" target="_blank">
+                  <span> APPLY NOW! </span>
+                  <svg
+                    class="external-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="pricing-item-pro">
+              <span class="price">25%</span>
+              <h4>Exclusive offer!</h4>
+              <div class="icon">
+                <img src="{% static '/images/dubai.svg' %}" alt="" />
+              </div>
+              <ul>
+                <li>Lorem Ipsum Dolores</li>
+                <li>Life-time Support</li>
+                <li class="non-function">Fastest Network</li>
+              </ul>
+              <div class="border-button">
+                <a href="" class="apply_now" target="_blank">
+                  <span> APPLY NOW! </span>
+                  <svg
+                    class="external-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="pricing-item-regular">
+              <span class="price">66%</span>
+              <h4>Exclusive offer!</h4>
+              <div class="icon">
+                <img src="{% static '/images/uk.png' %}" alt="" />
+              </div>
+              <ul>
+                <li>Lorem Ipsum Dolores</li>
+                <li>Fastest Network</li>
+                <li>More Options</li>
+              </ul>
+              <div class="border-button">
+                <a href="" class="apply_now" target="_blank">
+                  <span> APPLY NOW! </span>
+                  <svg
+                    class="external-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--offer section ends here-->
+
+    <!-- trustred  -->
+
+    <div
+      class="study-destination overflow-hidden p-40"
+      style="background-color: #f4f6f7c3"
+      data-sal="slide-up"
+      data-sal-duration="500"
+      data-sal-delay="100"
+      data-sal-easing="ease-in-out"
+    >
+      <div class="container-fluid">
+        <h2 class="text-center mb-0">
+          Trusted by
+          <span style="color: var(--color-primary)">Global Institutions</span> &
+          Partners
+        </h2>
+        <p class="text-center mb-4 mt-2 px-4" style="font-size: 14px">
+          Partnered with leading universities and educational institutions
+          worldwide to provide you with the best opportunities.
+        </p>
+        <div class="country-slider row slick-e d-flex flex-row">
+          <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
+            <div class="partner-test-class-list">
+              <a href="" target="_blank">
+                <img src="{% static 'images/western.png' %}" alt="Partner Logo" />
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
+            <div class="partner-test-class-list">
+              <a href="" target="_blank">
+                <img src="{% static 'images/southern.png' %}" alt="Partner Logo" />
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
+            <div class="partner-test-class-list">
+              <a href="" target="_blank">
+                <img src="{% static 'images/victory.jpg' %}" alt="Partner Logo" />
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
+            <div class="partner-test-class-list">
+              <a href="" target="_blank">
+                <img src="{% static 'images/inaha.png' %}" alt="Partner Logo" />
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
+            <div class="partner-test-class-list">
+              <a href="" target="_blank">
+                <img src="{% static 'images/exclusiv.png' %}" alt="Partner Logo" />
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
+            <div class="partner-test-class-list">
+              <a href="" target="_blank">
+                <img src="{% static 'images/western.png' %}" alt="Partner Logo" />
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
+            <div class="partner-test-class-list">
+              <a href="" target="_blank">
+                <img src="{% static 'images/acp.png' %}" alt="Partner Logo" />
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
+            <div class="partner-test-class-list">
+              <a href="" target="_blank">
+                <img src="{% static 'images/southern.png' %}" alt="Partner Logo" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- trusted  -->
+
+    <!-- testimonial  -->
+
+    <div
+      class="overflow-hidden"
+      data-sal="slide-up"
+      data-sal-duration="500"
+      data-sal-delay="100"
+      data-sal-easing="ease-in-out"
+    >
+      <div class="container-fluid">
+        <div class="row pt-3">
+          <div
+            class="col-sm-4 recent-event px-5 py-4"
+            style="background-color: #e0eafc; border-radius: 10px 10px 0 0;"
+          >
+            <h2 class="mb-0 fw-bold pt-3 footer-heading">
+              <span style="color: var(--color-primary)">Events</span>
+            </h2>
+            <a href="">
+              <div class="d-flex gap-4 recent my-3 align-items-center">
+                <div class="">
+                  <h1 class="m-0 p-0 text-success">12</h1>
+                  <h4 class="m-0 pb-1 pt-0">MAY</h4>
+                  <p style="height: 2px; background-color: green"></p>
+                </div>
+                <div class="">
+                  <h3>Udaan New Zealand Application Day</h3>
+                  <p>
+                    <i class="bi bi-clock" style="color: green"></i>
+                    <span style="color: green"> 10:00 AM - 6:00 PM</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <a href="">
+              <div class="d-flex gap-4 recent my-3 align-items-center">
+                <div class="">
+                  <h1 class="m-0 p-0 text-success">20</h1>
+                  <h4 class="m-0 pb-1 pt-0">AUG</h4>
+                  <p style="height: 2px; background-color: green"></p>
+                </div>
+                <div class="">
+                  <h3>International Education Fair – Dwarka</h3>
+                  <p>
+                    <i class="bi bi-clock" style="color: green"></i>
+                    <span style="color: green"> 10:00 AM - 6:00 PM</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <a href="">
+              <div class="d-flex gap-4 recent my-3 align-items-center">
+                <div class="">
+                  <h1 class="m-0 p-0 text-success">10</h1>
+                  <h4 class="m-0 pb-1 pt-0">SEP</h4>
+                  <p style="height: 2px; background-color: green"></p>
+                </div>
+                <div class="">
+                  <h3>Grace Edufair 2023</h3>
+                  <p>
+                    <i class="bi bi-clock" style="color: green"></i>
+                    <span style="color: green"> 10:00 AM - 6:00 PM</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-sm-8 py-4 px-4">
+            <h2 class="mb-0 pt-3">
+              <span style="color: var(--color-primary)">Testimonials</span>
+            </h2>
+
+            <div class="country-slider slick-a">
+              <div class="col-sm-12 p-sm-3 p-2">
+                <div class="">
+                  <p>
+                    <i
+                      class="bi bi-quote quote-icon-left"
+                      style="color: green; font-size: 20px"
+                    ></i>
+                    &nbsp;Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Commodi porro facere perspiciatis dignissimos,
+                    asperiores quo voluptatibus impedit adipisci sed incidunt!
+                    Fugit exercitationem dolores autem cumque nam ipsa aperiam
+                    veniam vel? &nbsp;
+                    <i
+                      class="bi bi-quote quote-icon-right"
+                      style="
+                        color: green;
+                        font-size: 20px;
+                        transform: rotate(180deg);
+                        display: inline-block;
+                      "
+                    ></i>
+                  </p>
+                </div>
+                <div class="d-flex gap-4 align-items-center">
+                  <div class="box">
+                    <img
+                      src="{% static 'images/icon.png' %}"
+                      alt=""
+                      class="image-testimonial"
+                    />
+                  </div>
+                  <div class="">
+                    <h3 class="m-0">Kathmandu</h3>
+                    <p class="py-0 mb-1">Aspire2 International, Tauranga</p>
+                    <span>
+                      <i class="bi bi-star-fill" style="color: #ffa127"></i>
+                      <i class="bi bi-star-fill" style="color: #ffa127"></i
+                      >&nbsp;<i
+                        class="bi bi-star-fill"
+                        style="color: #ffa127"
+                      ></i>
+                      <i class="bi bi-star-half" style="color: #ffa127"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 p-sm-3 p-2">
+                <div class="">
+                  <p>
+                    <i
+                      class="bi bi-quote quote-icon-left"
+                      style="color: green; font-size: 20px"
+                    ></i>
+                    &nbsp; Super professional, great result, very
+                    straightforward and are very efficient in answering all our
+                    calls and emails. Thank you sooooooooo much Roshan sir for
+                    putting extra efforts and it’s not possible without your
+                    help. Strongly recommended. Excellent service 100000 stars.
+                    Thank you Grace team. Thank you sooooo much. &nbsp;
+                    <i
+                      class="bi bi-quote quote-icon-right"
+                      style="
+                        color: green;
+                        font-size: 20px;
+                        transform: rotate(180deg);
+                        display: inline-block;
+                      "
+                    ></i>
+                  </p>
+                </div>
+                <div class="d-flex gap-4 align-items-center">
+                  <div class="box">
+                    <img src="{% static 'images/uk.png' %}" alt="" class="image-testimonial" />
+                  </div>
+                  <div class="">
+                    <h3 class="m-0">USA</h3>
+                    <p class="py-0 mb-1">Aspire2 International, Tauranga</p>
+                    <span>
+                      <i class="bi bi-star-fill" style="color: #ffa127"></i>
+                      <i class="bi bi-star-fill" style="color: #ffa127"></i
+                      >&nbsp;<i
+                        class="bi bi-star-fill"
+                        style="color: #ffa127"
+                      ></i>
+                      <i class="bi bi-star-half" style="color: #ffa127"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- testimonial  -->
+
+    <!--test-preparation classes section starts-->
+    <!-- <div
+      class="test-preparation p-40"
+      data-sal="fade"
+      data-sal-duration="500"
+      data-sal-delay="300"
+      data-sal-easing="ease-in-out"
+    >
+      <div class="container">
+        <h2 class="text-center">Expert-led Test Prep</h2>
+        <div class="row justify-content-center g-0">
+          <div class="col-sm-4 col-md-2 col-4">
+            <div class="test-class-list">
+              <a href="/test-preparation/ielts">
+                <img
+                  class="height-test"
+                  src="{% static 'images/MQ7sW2sHCKerJhrx8TYj.png"
+                  alt="IELTS"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-2 col-4">
+            <div class="test-class-list">
+              <a href="/test-preparation/sat">
+                <img
+                  class="height-test"
+                  src="{% static 'images/8BE0m7GiSSmb4lOcvURb.png"
+                  alt="SAT"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-2 col-4">
+            <div class="test-class-list">
+              <a href="/test-preparation/pte">
+                <img
+                  class="height-test"
+                  src="{% static 'images/SR6eVMy5xUFaiXgleaQd.png"
+                  alt="PTE"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-2 col-4">
+            <div class="test-class-list">
+              <a href="/test-preparation/gre">
+                <img
+                  class="height-test"
+                  src="{% static 'images/29VSQ0fEOZy4BijG2MIN.png"
+                  alt="GRE"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-2 col-4">
+            <div class="test-class-list">
+              <a href="/test-preparation/gmat">
+                <img
+                  class="height-test"
+                  src="{% static 'images/uX4D12bOGxvsAthv9vcQ.png"
+                  alt="GMAT"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-2 col-4">
+            <div class="test-class-list">
+              <a href="/test-preparation/duolingo">
+                <img
+                  class="height-test"
+                  src="{% static 'images/8tMgxdJmHi2pLbu0Q6Wr.png"
+                  alt="Duolingo"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!--test-preparation classes section ends-->
+
+    <!--testimonial section starts-->
+    <!-- <div
+      class="student-testimonial overflow-hidden p-40 pb-5"
+      data-sal="fade"
+      data-sal-duration="500"
+      data-sal-delay="100"
+      data-sal-easing="ease-in-out"
+    >
+      <div class="container-fluid">
+        <div
+          class="d-flex flex-row gap-0 justify-content-center align-items-center mb-3"
+        >
+          <h2 class="text-center m-0">
+            Success Stories: The voices of our students
+          </h2>
+        </div>
+
+        <div
+          class="row flex-wrap justify-content-center slick-c country-slider"
+        >
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/_b8P1bIsMGQ/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="_b8P1bIsMGQ"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">Sanjaya Gautam!</p>
+                  <p class="university-name">University of Western Australia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/B6eSECvVeHs/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="B6eSECvVeHs"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">Bhumika Gurung</p>
+                  <p class="university-name">
+                    Wentworth Institute of Higher Education
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/dLBzVccF66M/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="dLBzVccF66M"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">Sishir Chapagain</p>
+                  <p class="university-name">Youngstown State University</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/jUHwixy5w_4/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="jUHwixy5w_4"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">Deepesh Sunuwar</p>
+                  <p class="university-name">NEST Academy of Management</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/qI7R_5SLeF0/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="qI7R_5SLeF0"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">MOHIT KUMAR DAHAL</p>
+                  <p class="university-name">WICHITA STATE UNIVERSITY</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/VQqT_L0emo8/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="VQqT_L0emo8"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">PRASHANNA KHADKHA</p>
+                  <p class="university-name">WICHITA STATE UNIVERSITY</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/SO21jwSuqXE/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="SO21jwSuqXE"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">SAMRAT GURUNG</p>
+                  <p class="university-name">CHARLES STURT UNIVERSITY</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/knS1VB7ZYQ4/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="knS1VB7ZYQ4"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">SATYA PRAKASH SINGH</p>
+                  <p class="university-name">UNIVERSITY OF EAST LONDON</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/8XJzmS4MCxQ/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="8XJzmS4MCxQ"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">KISHOR SHRESTHA</p>
+                  <p class="university-name">
+                    WENTWORTH INSTITUTE OF HIGHER EDUCATION
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 px-sm-3 py-sm-0 mx-sm-3 p-2 m-2">
+            <div class="student-card">
+              <img
+                style="width: 100%; height: 100%; object-fit: cover"
+                src="{% static ' https://img.youtube.com/vi/hip56vexcKI/hqdefault.jpg "
+                alt="Testimonial Video"
+              />
+
+              <img
+                class="play-icon"
+                src="{% static 'images/youtube.svg"
+                alt="Play Icon"
+                data-video-id="hip56vexcKI"
+                data-type="youtube"
+              />
+              <div class="student-name-tag">
+                <div class="name-tag">
+                  <p class="student-name limit-words-5">NAYA SHRESTHA</p>
+                  <p class="university-name">UNIVERSITY OF WESTERN AUSTRALIA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- youtube play modal starts here -->
+    <div class="video-modal">
+      <div class="video-box">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+          <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+          <iframe
+            id="yt-video"
+            width="100%"
+            height="100%"
+            allow="autoplay; fullscreen"
+            allowfullscreen=""
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <!-- youtube play modal ends here-->
+{% endblock content %}
+

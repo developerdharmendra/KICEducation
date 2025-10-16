@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIC Education</title>
+
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="css/sal.css" />
+    <!-- Meta Pixel Code -->
+
+    <!-- End Facebook Pixel Code -->
+    <link rel="stylesheet" href="css/slick.min.css" />
+    <link rel="stylesheet" href="css/slick-theme.min.css" />
+
+    <link rel="stylesheet" href="css/boxicons.min.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <link
+      href="css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/fancybox.css" />
+
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link href="css/toastr.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+      integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA="
+      crossorigin="anon"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <div class="container-fluid">
+        <nav class="navbar">
+          <section class="navbar__left">
+            <a href="index.html" data-no-blank="">
+              <img class="logo" src="images/logo.png" alt="Logo" />
+            </a>
+            <div class="burger" id="burger">
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+            </div>
+          </section>
+
+          <section class="navbar__center">
+            <span class="overlay"></span>
+            <div class="menu" id="menu">
+              <div class="menu__header">
+                <span class="menu__arrow">
+                  <i class="bx bx-chevron-left"></i>
+                </span>
+                <span class="menu__title"></span>
+              </div>
+
+              <ul class="menu__inner">
+                <li
+                  class="menu__item menu-close d-flex justify-start align-items-center d-block d-sm-none"
+                >
+                  <a href="#" class="menu__link">
+                    <svg
+                      id="menu_dismiss"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <path d="M5 12H19">
+                          <animate
+                            fill="freeze"
+                            attributeName="d"
+                            dur="0.4s"
+                            values="M5 12H19;M12 12H12"
+                          ></animate>
+                          <set
+                            fill="freeze"
+                            attributeName="opacity"
+                            begin="0.4s"
+                            to="0"
+                          ></set>
+                        </path>
+                        <path d="M5 5L19 5M5 19L19 19" opacity="0">
+                          <animate
+                            fill="freeze"
+                            attributeName="d"
+                            begin="0.2s"
+                            dur="0.4s"
+                            values="M5 5L19 5M5 19L19 19;M5 5L19 19M5 19L19 5"
+                          ></animate>
+                          <set
+                            fill="freeze"
+                            attributeName="opacity"
+                            begin="0.2s"
+                            to="1"
+                          ></set>
+                        </path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="menu__item">
+                  <a href="index.html" class="menu__link">
+                    <span>Home</span>
+                  </a>
+                </li>
+
+                <li class="menu__item menu__dropdown">
+                  <a
+                    href="javascript:void(0)"
+                    class="menu__link"
+                    onclick="event.preventDefault()"
+                  >
+                    <span>Study Abroad</span>
+                    <i class="bx bx-chevron-right"></i>
+                  </a>
+                  <div
+                    class="submenu our-services-dropdown megamenu__text about-dropdown"
+                  >
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="university-details.html">
+                            <img
+                              src="images/study/australia.webp"
+                              alt="australia"
+                            />
+
+                            <span>Australia</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="university-details.html">
+                            <img src="images/study/uk.webp" alt="uk" />
+
+                            <span>U</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="university-details.html">
+                            <img src="images/study/canada.webp" alt="Canada" />
+
+                            <span>Canada</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="university-details.html">
+                            <img src="images/study/japan.webp" alt="Japan" />
+
+                            <span>Japan</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="university-details.html">
+                            <img
+                              src="images/study/germany.webp"
+                              alt="Germany"
+                            />
+
+                            <span>Germany</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="university-details.html">
+                            <img
+                              src="images/study/new-zealand.webp"
+                              alt=" new-zealand"
+                            />
+
+                            <span>New Zealand</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="university-details.html">
+                            <img
+                              src="images/study/s-korea.webp"
+                              alt="South Korea"
+                            />
+
+                            <span>South Korea</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="university-details.html">
+                            <img src="images/study/usa.webp" alt="USA" />
+
+                            <span>USA</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="menu__item menu__dropdown">
+                  <a
+                    href="javascript:void(0)"
+                    class="menu__link"
+                    onclick="event.preventDefault()"
+                  >
+                    <span>Test Preparation</span>
+                    <i class="bx bx-chevron-right"></i>
+                  </a>
+
+                  <div
+                    class="submenu our-services-dropdown megamenu__text about-dropdown"
+                  >
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="">
+                            <img
+                              src="images/study/duolingo.png"
+                              alt="Career Counselling icon"
+                            />
+                            <span>Duolingo</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="">
+                            <img src="images/study/gmat.png" alt="gmat" />
+
+                            <span>GMAT</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="">
+                            <img src="images/study/ilets.png" alt="IELTS" />
+
+                            <span>IELTS</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__inner">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="">
+                            <img src="images/study/pte.png" alt="PTE" />
+
+                            <span>PTE</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="menu__item">
+                  <a href="univerisity.html" class="menu__link">
+                    <span>University</span>
+                  </a>
+                </li>
+                <li class="menu__item">
+                  <a href="traning.html" class="menu__link">
+                    <span>Tranning</span>
+                  </a>
+                </li>
+                <li class="menu__item menu__dropdown">
+                  <a href="services.html" class="menu__link">
+                    <span>Services</span>
+                  </a>
+                </li>
+
+                <li class="menu__item">
+                  <a href="aboutus.html" class="menu__link">
+                    <span>About Us</span>
+                  </a>
+                </li>
+
+                <li class="menu__item">
+                  <a href="contact.html" class="menu__link">
+                    <span>Contact Us</span>
+                  </a>
+                </li>
+
+                <li class="menu__item">
+                  <a href="" class="btn-custom"
+                    ><span>Eligibility Check</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </nav>
+      </div>
+    </header>
+    <style>
+      .image-hero a {
+        display: block;
+        width: 100%;
+      }
+
+      .image-hero a img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
+
+    <section
+      class="py-5 about-us text-white d-flex align-items-center justify-content-center position-relative"
+    >
+      <!-- Overlay -->
+      <div class="play-overlay"></div>
+
+      <!-- Text Content -->
+      <div
+        class="content text-center"
+        style="position: relative; z-index: 2"
+        data-sal="fade"
+        data-sal-duration="800"
+        data-sal-delay="200"
+        data-sal-easing="ease-in-out"
+      >
+        <h2 data-sal="slide-up" data-sal-duration="600" data-sal-delay="300">
+          About Us
+        </h2>
+        <p data-sal="slide-up" data-sal-duration="600" data-sal-delay="500">
+          Welcome to our website! Learn more about who we are and what we do.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="row">
+        <div class="container-fluid">
+          <div class="row align-items-center px-4">
+            <div
+              class="col-lg-6 col-md-6 order-2 order-md-1 mt-4 pt-2 mt-sm-0 opt-sm-0"
+            >
+              <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 col-6">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 mt-4 pt-2">
+                      <div
+                        class="card work-desk rounded border-0 shadow-lg overflow-hidden"
+                      >
+                        <img
+                          src="https://www.bootdey.com/image/241x362/FFB6C1/000000"
+                          class="img-fluid"
+                          alt="Image"
+                        />
+                        <div class="img-overlay bg-dark"></div>
+                      </div>
+                    </div>
+                    <!--end col-->
+                  </div>
+                  <!--end row-->
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-6 col-md-6 col-6">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                      <div
+                        class="card work-desk rounded border-0 shadow-lg overflow-hidden"
+                      >
+                        <img
+                          src="https://www.bootdey.com/image/337x450/87CEFA/000000"
+                          class="img-fluid"
+                          alt="Image"
+                        />
+                        <div class="img-overlay bg-dark"></div>
+                      </div>
+                    </div>
+                    <!--end col-->
+
+                    <div class="col-lg-12 col-md-12 mt-4 pt-2">
+                      <div
+                        class="card work-desk rounded border-0 shadow-lg overflow-hidden"
+                      >
+                        <img
+                          src="https://www.bootdey.com/image/600x401/FF7F50/000000"
+                          class="img-fluid"
+                          alt="Image"
+                        />
+                        <div class="img-overlay bg-dark"></div>
+                      </div>
+                    </div>
+                    <!--end col-->
+                  </div>
+                  <!--end row-->
+                </div>
+                <!--end col-->
+              </div>
+              <!--end row-->
+            </div>
+            <!--end col-->
+
+            <div class="col-lg-6 col-md-6 col-12 order-1 order-md-2">
+              <div class="ml-lg-5">
+                <h2 class="text-custom font-weight-normal mb-3 footer-heading">
+                  About Us
+                </h2>
+                <h2 class="mb-4">
+                  Our mission is to <br />
+                  make your life easier.
+                </h2>
+                <p class="mb-0" style="color: #2b2b2b">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit quod
+                  debitis praesentium pariatur temporibus ipsa, cum quidem
+                  obcaecati sunt?
+                </p>
+
+                <div class="row">
+                  <div class="col-lg-12 mt-4 pt-2">
+                    <div class="media align-items-center rounded shadow p-3">
+                      <h4 class="ml-3 mb-0">
+                        <i class="fa fa-play h4 mb-0 text-custom"></i> Visoin
+                      </h4>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Possimus asperiores consequuntur, veritatis voluptate
+                        rerum laboriosam. Dolor molestias aut maiores error
+                        vero, enim consectetur ut. Facere quidem illo
+                        exercitationem vero ipsa.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 mt-4 pt-2">
+                    <div class="media align-items-center rounded shadow p-3">
+                      <h6 class="ml-3 mb-0">
+                        <i class="fa fa-file-download h4 mb-0 text-custom"></i>
+                        Miission
+                      </h6>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Aliquam, doloribus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 mt-4 pt-2">
+                    <div class="media align-items-center rounded shadow p-3">
+                      <h6 class="ml-3 mb-0">
+                        <i class="fa fa-user h4 mb-0 text-custom"></i> Future
+                        OutLook
+                      </h6>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Saepe porro eos veniam ratione obcaecati fugit. Odit
+                        cupiditate maiores ullam possimus.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--enr row-->
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Achievements -->
+    <div
+      class="counsellor-section overflow-hidden"
+      data-sal="fade"
+      data-sal-duration="600"
+      data-sal-delay="100"
+      data-sal-easing="ease"
+      style="background-color: #f4f6f7c3"
+    >
+      <div class="container-fluid">
+        <h2 class="text-center mb-0 mt-2">
+          Our <span style="color: var(--color-primary)">Achievements</span>
+        </h2>
+        <p class="text-center mb-4 mt-2 px-4" style="font-size: 14px">
+          We’re looking for committed, skilled professionals to join KIC’s
+          mission of guiding students abroad. Be part of a team that changes
+          lives.
+        </p>
+        <div class="counsellor-slider slick-d">
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://images.unsplash.com/photo-1570610159825-ec5d3823660c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2VydGlmaWNhdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <p class="card-text text-center text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://images.unsplash.com/photo-1742415888265-d5044039d8e6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNlcnRpZmljYXRlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <p class="card-text text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://images.unsplash.com/photo-1596067825960-c996c51d7463?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNlcnRpZmljYXRlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <p class="card-text text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://images.unsplash.com/photo-1570610159825-ec5d3823660c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2VydGlmaWNhdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <p class="card-text text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
+          >
+            <div class="card mx-2">
+              <img
+                class="card-img-top object-fit"
+                src="https://images.unsplash.com/photo-1596067825960-c996c51d7463?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNlcnRpZmljYXRlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+                alt="Card image cap"
+                style="height: 170px"
+              />
+              <div class="card-body">
+                <p class="card-text text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, illum?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Achievements -->
+
+    <!-- news letter  -->
+    <div class="footer-newsletter">
+      <div class="container-fluid">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h2 class="py-0 my-0" style="color: #fff">Join Our Newsletter</h2>
+            <p
+              class="text-center py-2 mb-0"
+              style="color: #b6b3b3; font-size: 14px"
+            >
+              Subscribe to our newsletter and receive the latest news about our
+              products and services!
+            </p>
+            <form action="" method="post" class="">
+              <div class="newsletter-form">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                />
+                <input type="submit" value="Subscribe" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer
+      data-sal="fade"
+      data-sal-duration="500"
+      data-sal-delay="100"
+      data-sal-easing="ease-in-out"
+    >
+      <div class="container-fluid">
+        <div class="row g-sm-5 g-3 footer-content">
+          <div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-sm-0 mb-1">
+            <a href="index.html">
+              <img src="images/logo.png" alt="" style="width: 150px" />
+            </a>
+            <p class="pt-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+              provident atque beatae aperiam quos, ipsam nobis nisi eligendi
+              laudantium reiciendis
+            </p>
+            <ul class="social-links d-sm-block">
+              <li>
+                <a href="" target="_blank" class="social-item"
+                  ><img src="images/footer-facebook.svg" alt="Facebook icon"
+                /></a>
+              </li>
+              <li>
+                <a href="" class="social-item" target="_blank">
+                  <img src="images/footer-messenger.svg" alt="Messenger icon" />
+                </a>
+              </li>
+              <li>
+                <a href="" target="_blank" class="social-item"
+                  ><img src="images/footer-instagram.svg" alt="Instagram icon"
+                /></a>
+              </li>
+              <li>
+                <a href="" target="_blank" class="social-item"
+                  ><img src="images/footer-linkedin.svg" alt="Linkedin icon"
+                /></a>
+              </li>
+              <li>
+                <a href="" target="_blank" class="social-item"
+                  ><img src="images/footer-tiktok.svg" alt="Tiktok icon"
+                /></a>
+              </li>
+              <li>
+                <a href="" target="_blank" class="social-item"
+                  ><img src="images/footer-youtube.svg" alt="Youtube icon"
+                /></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-sm-5 col-md-5 col-xl-3 mb-sm-0 mb-2">
+            <div class="useful-link-container">
+              <ul class="footer-list">
+                <h3 class="footer-heading">Quick Links</h3>
+
+                <li>
+                  <a href="aboutus.html">About KIC</a>
+                </li>
+                <li>
+                  <a href="services.html">Services</a>
+                </li>
+
+                <li>
+                  <a href="univerisity.html">Universities</a>
+                </li>
+
+                <li>
+                  <a href="traning.html">Tranning</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-sm-0 mb-2">
+            <div class="useful-link-container">
+              <ul class="footer-list">
+                <h3 class="footer-heading">Useful Documents</h3>
+
+                <li>
+                  <a href="">Experience Letter</a>
+                </li>
+                <li>
+                  <a href="">Recommendation Letter</a>
+                </li>
+
+                <li>
+                  <a href="">Sample Documents</a>
+                </li>
+                <li>
+                  <a href="">Bio-Data</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-sm-0 mb-2">
+            <h3 class="footer-heading">Contact Us</h3>
+            <div class="footer-col">
+              <ul class="footer-list">
+                <li>
+                  <span class="ri--phone-fill"></span>
+                  <a href="tel:03-5567889">03-5567889</a>
+
+                  <span>,</span>
+                  <a href="tel:9809876543">9809876543</a>
+                </li>
+                <li>
+                  <span class="ic--round-mail"></span>
+                  <a href="mailto:info@kiceducation.com"
+                    >info@kiceducation.com</a
+                  >
+                </li>
+                <li>
+                  <span class="ic--baseline-location-on"></span>
+                  <a href="" target="_blank">Gaushala, Kathmandu, Nepal.</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="footer-line" />
+        <div class="copyright">
+          <div class="copy-text">
+            <span>© 2025 - All Rights reserved. KICEducation</span>
+          </div>
+          <div class="d-flex gap-2">
+            <a href="" target="_blank">Terms & Conditions</a>
+            <span class="text-white">|</span>
+            <a href="" target="_blank">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Link to external JS files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/lozad.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/sal.min.js"></script>
+    <script src="js/jquery.matchHeight-min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/sal.js"></script>
+    <!-- Toastr Notifications -->
+
+    <script src="js/toastr.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // For student testimonials and partner videos
+        $(".play-icon").on("click", function (e) {
+          e.preventDefault();
+          const videoId = $(this).data("video-id");
+          $("#yt-video").attr(
+            "src",
+            `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`
+          );
+          $(".video-modal").fadeIn();
+        });
+
+        $(".close-btn, .modal-overlay").on("click", function () {
+          $(".video-modal").fadeOut();
+          $("#yt-video").attr("src", ""); // Stop the video when closing
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function updateBannerImages() {
+          const images = document.querySelectorAll("img.hero-image");
+          images.forEach((img) => {
+            const mobileSrc = img.getAttribute("data-mobile-src");
+            const desktopSrc = img.getAttribute("data-desktop-src");
+            if (window.innerWidth <= 767 && mobileSrc) {
+              img.src = mobileSrc;
+            } else {
+              img.src = desktopSrc;
+            }
+          });
+        }
+
+        updateBannerImages();
+        // Optional: also update on window resize (debounced if you want)
+        window.addEventListener("resize", function () {
+          updateBannerImages();
+        });
+      });
+    </script>
+  </body>
+</html>
