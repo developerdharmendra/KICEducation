@@ -1,138 +1,128 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block title %}Services{% endblock title %}
+
 {% block content %}
+<section
+  class="py-5 about-us text-white d-flex align-items-center justify-content-center position-relative"
+>
+  <!-- Overlay -->
+  <div class="play-overlay"></div>
 
-    <section
-      class="py-5 about-us text-white d-flex align-items-center justify-content-center position-relative"
-    >
-      <!-- Overlay -->
-      <div class="play-overlay"></div>
+  <!-- Text Content -->
+  <div
+    class="content text-center"
+    style="position: relative; z-index: 2"
+    data-sal="fade"
+    data-sal-duration="800"
+    data-sal-delay="200"
+    data-sal-easing="ease-in-out"
+  >
+    <h2 data-sal="slide-up" data-sal-duration="600" data-sal-delay="300">
+      Service We Provide
+    </h2>
+    <p data-sal="slide-up" data-sal-duration="600" data-sal-delay="500">
+      KIC guides you through every step — from university selection to
+      pre-departure — making your study abroad journey smooth and stress-free.
+    </p>
+  </div>
+</section>
 
-      <!-- Text Content -->
+<!-- services section start -->
+<div
+  class="services py-3"
+  data-sal="fade"
+  data-sal-duration="600"
+  data-sal-delay="100"
+  data-sal-easing="ease"
+>
+  <div class="container-fluid">
+    <div class="row g-4 my-3">
       <div
-        class="content text-center"
-        style="position: relative; z-index: 2"
-        data-sal="fade"
-        data-sal-duration="800"
+        class="col-lg-3"
+        data-sal="slide-up"
+        data-sal-duration="500"
+        data-sal-delay="100"
+        data-sal-easing="ease-in-out"
+      >
+        <div class="service-item h-100 d-flex flex-column">
+          <img src="{% static 'images/service/service-icon-01.png' %}" alt="" />
+          <h4 class="py-2 mb-0 mt-2">App Maintenance</h4>
+          <p class="flex-grow-1">
+            You are not allowed to redistribute this template ZIP file on any
+            other website.
+          </p>
+          <div class="text-button mt-1">
+            <a href="">Read More <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-lg-3"
+        data-sal="slide-up"
+        data-sal-duration="500"
         data-sal-delay="200"
         data-sal-easing="ease-in-out"
       >
-        <h2 data-sal="slide-up" data-sal-duration="600" data-sal-delay="300">
-          Service We Provide
-        </h2>
-        <p data-sal="slide-up" data-sal-duration="600" data-sal-delay="500">
-          KIC guides you through every step — from university selection to
-          pre-departure — making your study abroad journey smooth and
-          stress-free.
-        </p>
+        <div class="service-item second-service h-100 d-flex flex-column">
+          <img src="{% static 'images/service/service-icon-02.png' %}" alt="" />
+          <h4 class="py-2 mb-0 mt-2">Rocket Speed of App</h4>
+          <p class="flex-grow-1">
+            You are allowed to use the Chain App Dev HTML template. Feel free to
+            modify or edit this layout.
+          </p>
+          <div class="text-button">
+            <a href="">Read More <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
       </div>
-    </section>
-
-    <!--Our services section starts-->
-
-    <div
-      class="services py-3"
-      data-sal="fade"
-      data-sal-duration="600"
-      data-sal-delay="100"
-      data-sal-easing="ease"
-    >
-      <div class="container-fluid">
-        <div class="row g-4 my-3">
-          <div
-            class="col-lg-3"
-            data-sal="slide-up"
-            data-sal-duration="500"
-            data-sal-delay="100"
-            data-sal-easing="ease-in-out"
-          >
-            <div class="service-item h-100 d-flex flex-column">
-              <img src="{% static 'images/service/service-icon-01.png' %}" alt="" />
-              <h4 class="py-2 mb-0 mt-2">App Maintenance</h4>
-              <p class="flex-grow-1">
-                You are not allowed to redistribute this template ZIP file on
-                any other website.
-              </p>
-              <div class="text-button mt-1">
-                <a href=""
-                  >Read More <i class="fa fa-arrow-right"></i
-                ></a>
-              </div>
-            </div>
+      <div
+        class="col-lg-3"
+        data-sal="slide-up"
+        data-sal-duration="500"
+        data-sal-delay="300"
+        data-sal-easing="ease-in-out"
+      >
+        <div class="service-item third-service h-100 d-flex flex-column">
+          <img src="{% static 'images/service/service-icon-03.png' %}" alt="" />
+          <h4 class="py-2 mb-0 mt-2">Multi Workflow Idea</h4>
+          <p class="flex-grow-1">
+            If this template is beneficial for your work, please support us
+            <a
+              rel="nofollow"
+              href="https://paypal.me/templatemo"
+              target="_blank"
+              >a little via PayPal</a
+            >. Thank you.
+          </p>
+          <div class="text-button">
+            <a href="">Read More <i class="fa fa-arrow-right"></i></a>
           </div>
-          <div
-            class="col-lg-3"
-            data-sal="slide-up"
-            data-sal-duration="500"
-            data-sal-delay="200"
-            data-sal-easing="ease-in-out"
-          >
-            <div class="service-item second-service h-100 d-flex flex-column">
-              <img src="{% static 'images/service/service-icon-02.png' %}" alt="" />
-              <h4 class="py-2 mb-0 mt-2">Rocket Speed of App</h4>
-              <p class="flex-grow-1">
-                You are allowed to use the Chain App Dev HTML template. Feel
-                free to modify or edit this layout.
-              </p>
-              <div class="text-button">
-                <a href=""
-                  >Read More <i class="fa fa-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-lg-3"
-            data-sal="slide-up"
-            data-sal-duration="500"
-            data-sal-delay="300"
-            data-sal-easing="ease-in-out"
-          >
-            <div class="service-item third-service h-100 d-flex flex-column">
-              <img src="{% static 'images/service/service-icon-03.png' %}" alt="" />
-              <h4 class="py-2 mb-0 mt-2">Multi Workflow Idea</h4>
-              <p class="flex-grow-1">
-                If this template is beneficial for your work, please support us
-                <a
-                  rel="nofollow"
-                  href="https://paypal.me/templatemo"
-                  target="_blank"
-                  >a little via PayPal</a
-                >. Thank you.
-              </p>
-              <div class="text-button">
-                <a href=""
-                  >Read More <i class="fa fa-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-lg-3"
-            data-sal="slide-up"
-            data-sal-duration="500"
-            data-sal-delay="400"
-            data-sal-easing="ease-in-out"
-          >
-            <div class="service-item fourth-service h-100 d-flex flex-column">
-              <img src="{% static 'images/service/service-icon-01.png' %}" alt="" />
-              <h4 class="py-2 mb-0 mt-2">24/7 Help &amp; Support</h4>
-              <p class="flex-grow-1">
-                Lorem ipsum dolor consectetur adipiscing elit sedder
-                williamsburg photo booth quinoa and fashion axe.
-              </p>
-              <div class="text-button">
-                <a href=""
-                  >Read More <i class="fa fa-arrow-right"></i
-                ></a>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div
+        class="col-lg-3"
+        data-sal="slide-up"
+        data-sal-duration="500"
+        data-sal-delay="400"
+        data-sal-easing="ease-in-out"
+      >
+        <div class="service-item fourth-service h-100 d-flex flex-column">
+          <img src="{% static 'images/service/service-icon-01.png' %}" alt="" />
+          <h4 class="py-2 mb-0 mt-2">24/7 Help &amp; Support</h4>
+          <p class="flex-grow-1">
+            Lorem ipsum dolor consectetur adipiscing elit sedder williamsburg
+            photo booth quinoa and fashion axe.
+          </p>
+          <div class="text-button">
+            <a href="">Read More <i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
     </div>
-
-    <!--Our services section ends-->
-
- {% include "kic/partial/newsletter.html" %}
-{% endblock content %} 
+  </div>
+</div>
+<!-- services section end -->
+{% include "kic/partial/newsletter.html" %}
+{% endblock content %}

@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section
+  class="py-5 about-us text-white d-flex align-items-center justify-content-center position-relative"
+>
+  <!-- Overlay -->
+  <div class="play-overlay"></div>
+
+  <!-- Text Content -->
+  <div
+    class="content text-center"
+    style="position: relative; z-index: 2"
+    data-sal="fade"
+    data-sal-duration="800"
+    data-sal-delay="200"
+    data-sal-easing="ease-in-out"
+  >
+    <h2 data-sal="slide-up" data-sal-duration="600" data-sal-delay="300">
+      Service We Provide
+    </h2>
+    <p data-sal="slide-up" data-sal-duration="600" data-sal-delay="500">
+      KIC guides you through every step — from university selection to
+      pre-departure — making your study abroad journey smooth and stress-free.
+    </p>
+  </div>
+</section>
+
+<section
+  class="py-4"
+  data-sal="fade"
+  data-sal-duration="600"
+  data-sal-delay="100"
+  data-sal-easing="ease"
+>
+  <div class="container-fluid">
+    <div class="row px-3">
+      <div
+        class="col-md-8"
+        data-sal="slide-right"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        <img src="images/service/service-icon-01.png" alt="" />
+        <h3 class="py-2">App Maintenance</h3>
+        <p style="text-align: justify">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
+          ipsum suscipit dolores dolor eligendi dignissimos omnis, laboriosam,
+          possimus ex reprehenderit voluptatibus aut. Et soluta ipsam sit
+          expedita sequi dolorum aperiam. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Nam qui incidunt provident consequatur! Repudiandae
+          molestias, distinctio pariatur corporis accusamus soluta officia
+          tempora. Aperiam aut dolorem odio illum aliquid fuga sequi.
+          <br />
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
+          ipsum suscipit dolores dolor eligendi dignissimos omnis, laboriosam,
+          possimus ex reprehenderit voluptatibus aut. Et soluta ipsam sit
+          expedita sequi dolorum aperiam. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Nam qui incidunt provident consequatur! Repudiandae
+          molestias, distinctio pariatur corporis accusamus soluta officia
+          tempora. Aperiam aut dolorem odio illum aliquid fuga sequi.
+        </p>
+      </div>
+      <div
+        class="col-md-4"
+        data-sal="slide-left"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        <div
+          class="card border-2 shadow-sm"
+          style="border-right: 1px solid var(--color-primary)"
+        >
+          <div class="card-body py-4 px-4">
+            <h3
+              class="mb-4 footer-heading fw-bold"
+              style="color: var(--color-primary)"
+            >
+              Social Engagement
+            </h3>
+            <ul class="service-details">
+              <li>
+                <a href="service-details.html"
+                  ><i class="bi bi-circle-fill"></i> Career Counselling
+                </a>
+              </li>
+
+              <li>
+                <a href="service-details.html"
+                  ><i class="bi bi-circle-fill"></i> Country & University
+                  selection</a
+                >
+              </li>
+
+              <li>
+                <a href="service-details.html"
+                  ><i class="bi bi-circle-fill"></i> Student Screening</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="py-5"
+  style="background-color: #f4f6f7c3"
+  data-sal="slide-up"
+  data-sal-duration="800"
+  data-sal-delay="200"
+>
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-10 justify-content-center">
+        <h1
+          class="text-center fw-bold mb-2"
+          style="color: var(--color-primary)"
+        >
+          Are you looking for above services?
+        </h1>
+        <p class="text-center">Talk to us and get free consultation now!</p>
+        <div class="d-flex justify-content-center">
+          <a href="" class="btn btn-outline-primary text-uppercase px-4">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

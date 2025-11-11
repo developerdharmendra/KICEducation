@@ -1,4 +1,9 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KIC Education{% endblock title %}
+
+{% block content %}
 <!--hero section for image banner starts here-->
 
 <!-- <section class="hero video-hero">
@@ -1118,5 +1123,6 @@
     </div>
   </div>
   <!-- youtube play modal ends here-->
-  {% include "kic/partial/newsletter.html" %} {% endblock content %}
+  {% include "kic/partial/newsletter.html" %}
+{% endblock content %}
 </div>
