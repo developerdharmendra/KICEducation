@@ -1,0 +1,320 @@
+{% load static %}
+
+<header id="header">
+  <div class="container-fluid">
+    <nav class="navbar">
+      <section class="navbar__left">
+        <a href="{% url 'home' %}" data-no-blank="">
+          <img class="logo" src="{% static 'images/logo.png' %}" alt="Logo" />
+        </a>
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </div>
+      </section>
+
+      <section class="navbar__center">
+        <span class="overlay"></span>
+        <div class="menu" id="menu">
+          <div class="menu__header">
+            <span class="menu__arrow">
+              <i class="bx bx-chevron-left"></i>
+            </span>
+            <span class="menu__title"></span>
+          </div>
+
+          <ul class="menu__inner">
+            <li
+              class="menu__item menu-close d-flex justify-start align-items-center d-block d-sm-none"
+            >
+              <a href="#" class="menu__link">
+                <svg
+                  id="menu_dismiss"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12H19">
+                      <animate
+                        fill="freeze"
+                        attributeName="d"
+                        dur="0.4s"
+                        values="M5 12H19;M12 12H12"
+                      ></animate>
+                      <set
+                        fill="freeze"
+                        attributeName="opacity"
+                        begin="0.4s"
+                        to="0"
+                      ></set>
+                    </path>
+                    <path d="M5 5L19 5M5 19L19 19" opacity="0">
+                      <animate
+                        fill="freeze"
+                        attributeName="d"
+                        begin="0.2s"
+                        dur="0.4s"
+                        values="M5 5L19 5M5 19L19 19;M5 5L19 19M5 19L19 5"
+                      ></animate>
+                      <set
+                        fill="freeze"
+                        attributeName="opacity"
+                        begin="0.2s"
+                        to="1"
+                      ></set>
+                    </path>
+                  </g>
+                </svg>
+              </a>
+            </li>
+
+            <li class="menu__item">
+              <a href="{% url 'home' %}" class="menu__link">
+                <span>Home</span>
+              </a>
+            </li>
+
+            <li class="menu__item menu__dropdown">
+              <a
+                href="javascript:void(0)"
+                class="menu__link"
+                onclick="event.preventDefault()"
+              >
+                <span>Study Abroad</span>
+                <i class="bx bx-chevron-right"></i>
+              </a>
+              <div
+                class="submenu our-services-dropdown megamenu__text about-dropdown"
+              >
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="university-details.html">
+                        <img
+                          src="{% static 'images/study/australia.webp' %}"
+                          alt="australia"
+                        />
+
+                        <span>Australia</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="university-details.html">
+                        <img
+                          src="{% static 'images/study/uk.webp' %}"
+                          alt="uk"
+                        />
+
+                        <span>U</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="university-details.html">
+                        <img
+                          src="{% static 'images/study/canada.webp' %}"
+                          alt="Canada"
+                        />
+
+                        <span>Canada</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="university-details.html">
+                        <img
+                          src="{% static 'images/study/japan.webp' %}"
+                          alt="Japan"
+                        />
+
+                        <span>Japan</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="university-details.html">
+                        <img
+                          src="{% static 'images/study/germany.webp' %}"
+                          alt="Germany"
+                        />
+
+                        <span>Germany</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="university-details.html">
+                        <img
+                          src="{% static 'images/study/new-zealand.webp' %}"
+                          alt=" new-zealand"
+                        />
+
+                        <span>New Zealand</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="university-details.html">
+                        <img
+                          src="{% static 'images/study/s-korea.webp' %}"
+                          alt="South Korea"
+                        />
+
+                        <span>South Korea</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="university-details.html">
+                        <img
+                          src="{% static 'images/study/usa.webp' %}"
+                          alt="USA"
+                        />
+
+                        <span>USA</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="menu__item menu__dropdown">
+              <a
+                href="javascript:void(0)"
+                class="menu__link"
+                onclick="event.preventDefault()"
+              >
+                <span>Test Preparation</span>
+                <i class="bx bx-chevron-right"></i>
+              </a>
+
+              <div
+                class="submenu our-services-dropdown megamenu__text about-dropdown"
+              >
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="">
+                        <img
+                          src="{% static 'images/study/duolingo.png' %}"
+                          alt="Career Counselling icon"
+                        />
+                        <span>Duolingo</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="">
+                        <img
+                          src="{% static 'images/study/gmat.png' %}"
+                          alt="gmat"
+                        />
+
+                        <span>GMAT</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="">
+                        <img
+                          src="{% static 'images/study/ilets.png' %}"
+                          alt="IELTS"
+                        />
+
+                        <span>IELTS</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="submenu__inner">
+                  <ul class="submenu__list">
+                    <li>
+                      <a href="">
+                        <img
+                          src="{% static 'images/study/pte.png' %}"
+                          alt="PTE"
+                        />
+
+                        <span>PTE</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="menu__item">
+              <a href="{% url 'university' %}" class="menu__link">
+                <span>University</span>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="{% url 'tranning' %}" class="menu__link">
+                <span>Tranning</span>
+              </a>
+            </li>
+            <li class="menu__item menu__dropdown">
+              <a href="{% url 'services' %}" class="menu__link">
+                <span>Services</span>
+              </a>
+            </li>
+
+            <li class="menu__item">
+              <a href="{% url 'aboutUs' %}" class="menu__link">
+                <span>About Us</span>
+              </a>
+            </li>
+
+            <li class="menu__item">
+              <a href="{% url 'contact' %}" class="menu__link">
+                <span>Contact Us</span>
+              </a>
+            </li>
+
+            <li class="menu__item">
+              <a href="" class="btn-custom"><span>Eligibility Check</span></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </nav>
+  </div>
+</header>
