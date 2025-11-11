@@ -4,7 +4,7 @@
   <div class="container-fluid">
     <nav class="navbar">
       <section class="navbar__left">
-        <a href="{% url 'home' %}" data-no-blank="">
+        <a href="{% url 'kic:home' %}" data-no-blank="">
           <img class="logo" src="{% static 'images/logo.png' %}" alt="Logo" />
         </a>
         <div class="burger" id="burger">
@@ -78,7 +78,7 @@
             </li>
 
             <li class="menu__item">
-              <a href="{% url 'home' %}" class="menu__link">
+              <a href="{% url 'kic:home' %}" class="menu__link">
                 <span>Home</span>
               </a>
             </li>
@@ -282,29 +282,29 @@
             </li>
 
             <li class="menu__item">
-              <a href="{% url 'university' %}" class="menu__link">
+              <a href="{% url 'kic:university' %}" class="menu__link">
                 <span>University</span>
               </a>
             </li>
             <li class="menu__item">
-              <a href="{% url 'training' %}" class="menu__link">
+              <a href="{% url 'kic:training' %}" class="menu__link">
                 <span>Training</span>
               </a>
             </li>
             <li class="menu__item menu__dropdown">
-              <a href="{% url 'services' %}" class="menu__link">
+              <a href="{% url 'kic:services' %}" class="menu__link">
                 <span>Services</span>
               </a>
             </li>
 
             <li class="menu__item">
-              <a href="{% url 'about' %}" class="menu__link">
+              <a href="{% url 'kic:about' %}" class="menu__link">
                 <span>About Us</span>
               </a>
             </li>
 
             <li class="menu__item">
-              <a href="{% url 'contact' %}" class="menu__link">
+              <a href="{% url 'kic:contact' %}" class="menu__link">
                 <span>Contact Us</span>
               </a>
             </li>

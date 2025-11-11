@@ -9,7 +9,7 @@
   <div class="container-fluid">
     <div class="row g-sm-5 g-3 footer-content">
       <div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-sm-0 mb-1">
-        <a href="{% url 'home' %}">
+        <a href="{% url 'kic:home' %}">
           <img
             src="{% static 'images/logo.png' %}"
             alt=""
@@ -74,18 +74,18 @@
             <h3 class="footer-heading">Quick Links</h3>
 
             <li>
-              <a href="{% url 'about' %}">About KIC</a>
+              <a href="{% url 'kic:about' %}">About KIC</a>
             </li>
             <li>
-              <a href="{% url 'services' %}">Services</a>
-            </li>
-
-            <li>
-              <a href="{% url 'university' %}">Universities</a>
+              <a href="{% url 'kic:services' %}">Services</a>
             </li>
 
             <li>
-              <a href="{% url 'training' %}">Training</a>
+              <a href="{% url 'kic:university' %}">Universities</a>
+            </li>
+
+            <li>
+              <a href="{% url 'kic:training' %}">Training</a>
             </li>
           </ul>
         </div>
