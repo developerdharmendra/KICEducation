@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # local apps
+    'accounts',
     'kic',
+    # third-party packages
 ]
 
 MIDDLEWARE = [
@@ -129,6 +132,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# custom user model configuration
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 # logging configuration
