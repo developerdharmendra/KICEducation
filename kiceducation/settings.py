@@ -145,6 +145,12 @@ if DEBUG:
     ]
 
 
+# kic education constants values
+KIC_EMAIL_ADDRESS = 'info@kiceducation.com'
+KIC_ADDRESS = 'Biratnagar-09, Sansarimaisthan, Nepal'
+KIC_PHONE_NUMBER = 9705430592
+
+
 # logging configuration
 LOGGING = {
     'version': 1,
