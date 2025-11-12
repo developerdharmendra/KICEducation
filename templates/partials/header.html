@@ -95,118 +95,20 @@
               <div
                 class="submenu our-services-dropdown megamenu__text about-dropdown"
               >
+                {% for country in countries %}
                 <div class="submenu__inner">
                   <ul class="submenu__list">
                     <li>
-                      <a href="university-details.html">
-                        <img
-                          src="{% static 'images/study/australia.webp' %}"
-                          alt="australia"
-                        />
-
-                        <span>Australia</span>
+                      <a href="{{ country.get_absolute_url }}">
+                        {% if country.flat %}
+                        <img src="{{ country.flag.url }}" alt="{{ country.name }}" />
+                        {% endif %}
+                        <span>{{ country.name }}</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="university-details.html">
-                        <img
-                          src="{% static 'images/study/uk.webp' %}"
-                          alt="uk"
-                        />
-
-                        <span>U</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="university-details.html">
-                        <img
-                          src="{% static 'images/study/canada.webp' %}"
-                          alt="Canada"
-                        />
-
-                        <span>Canada</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="university-details.html">
-                        <img
-                          src="{% static 'images/study/japan.webp' %}"
-                          alt="Japan"
-                        />
-
-                        <span>Japan</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="university-details.html">
-                        <img
-                          src="{% static 'images/study/germany.webp' %}"
-                          alt="Germany"
-                        />
-
-                        <span>Germany</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="university-details.html">
-                        <img
-                          src="{% static 'images/study/new-zealand.webp' %}"
-                          alt=" new-zealand"
-                        />
-
-                        <span>New Zealand</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="university-details.html">
-                        <img
-                          src="{% static 'images/study/s-korea.webp' %}"
-                          alt="South Korea"
-                        />
-
-                        <span>South Korea</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="university-details.html">
-                        <img
-                          src="{% static 'images/study/usa.webp' %}"
-                          alt="USA"
-                        />
-
-                        <span>USA</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                {% endfor %}
               </div>
             </li>
 
@@ -223,61 +125,17 @@
               <div
                 class="submenu our-services-dropdown megamenu__text about-dropdown"
               >
+                {% for preparation_class in preparation_classes %}
                 <div class="submenu__inner">
                   <ul class="submenu__list">
                     <li>
-                      <a href="">
-                        <img
-                          src="{% static 'images/study/duolingo.png' %}"
-                          alt="Career Counselling icon"
-                        />
-                        <span>Duolingo</span>
+                      <a href="{{ preparation_class.get_absolute_url }}">
+                        <span>{{ preparation_class.name }}</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="">
-                        <img
-                          src="{% static 'images/study/gmat.png' %}"
-                          alt="gmat"
-                        />
-
-                        <span>GMAT</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="">
-                        <img
-                          src="{% static 'images/study/ilets.png' %}"
-                          alt="IELTS"
-                        />
-
-                        <span>IELTS</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="submenu__inner">
-                  <ul class="submenu__list">
-                    <li>
-                      <a href="">
-                        <img
-                          src="{% static 'images/study/pte.png' %}"
-                          alt="PTE"
-                        />
-
-                        <span>PTE</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                {% endfor %}
               </div>
             </li>
 
