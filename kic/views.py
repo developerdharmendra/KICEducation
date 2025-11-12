@@ -1,22 +1,59 @@
-from django.shortcuts import render
+import logging
+from typing import Any
 
-# Create your views here.
-def home(request):
-    return render(request, 'kic/index.html')
+from django.views.generic.base import TemplateView
+from django.views.generic.detail import DetailView
+
+from .models import Country, Service, TestPreparationClass
+
+logger = logging.getLogger(__name__)
 
 
-def university(request):
-    return render(request, 'kic/univerisity.html')
+class HomeView(TemplateView):
+    template_name = 'kic/index.html'
 
 
-def training(request):
-    return render(request, 'kic/training.html')
+class UniversityView(TemplateView):
+    template_name = 'kic/university.html'
 
-def services(request):
-    return render(request, 'kic/services.html')
 
-def about(request):
-    return render(request, 'kic/about.html')
+class TrainingView(TemplateView):
+    template_name = 'kic/training.html'
 
-def contact(request):
-    return render(request, 'kic/contact.html')
+
+class ServicesView(TemplateView):
+    template_name = 'kic/services.html'
+
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['services'] = Service.objects.all()
+        return context
+
+
+class ServiceDetailView(DetailView):
+    model = Service
+    template_name = 'kic/service_detail.html'
+    context_object_name = 'service'
+    slug_url_kwarg = 'service_slug'
+
+
+class AboutView(TemplateView):
+    template_name = 'kic/about.html'
+
+
+class ContactView(TemplateView):
+    template_name = 'kic/contact.html'
+
+
+class CountryDetailView(DetailView):
+    model = Country
+    template_name = 'kic/country_detail.html'
+    context_object_name = 'country'
+    slug_url_kwarg = 'country_slug'
+
+
+class TestPreparationClassDetailView(DetailView):
+    model = TestPreparationClass
+    template_name = 'kic/test_preparation_class_detail.html'
+    context_object_name = 'preparation_class'
+    slug_url_kwarg = 'preparation_class_slug'

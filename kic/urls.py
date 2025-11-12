@@ -1,13 +1,21 @@
 from django.urls import path
 from .views import *
+from . import views
 
 app_name = 'kic'
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('university/', university, name='university'),
-    path('training/', training, name='training'),
-    path('services/', services, name='services'),
-    path('about/', about, name='about'),
-    path('contact/', contact, name='contact'),
+    path('', HomeView.as_view(), name='home'),
+    path('universities/', UniversityView.as_view(), name='university'),
+    path('training/', TrainingView.as_view(), name='training'),
+    path('services/', ServicesView.as_view(), name='services'),
+    path('services/<slug:service_slug>/', ServiceDetailView.as_view(), name='service_detail'),
+    path('about/', AboutView.as_view(), name='about'),
+    path('contact/', ContactView.as_view(), name='contact'),
+    path('<slug:country_slug>/', CountryDetailView.as_view(), name='country_detail'),
+    path(
+        'preparations/<slug:preparation_class_slug>/',
+        TestPreparationClassDetailView.as_view(),
+        name='preparation_class_detail',
+    ),
 ]
