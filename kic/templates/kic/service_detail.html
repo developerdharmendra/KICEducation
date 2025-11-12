@@ -1,22 +1,16 @@
 {% extends "base.html" %}
-{% load static %}
+
+{% block title %}
+{{ service.name }} - {{ SITE_NAME }}
+{% endblock title %}
 
 {% block content %}
-<section
-  class="py-5 about-us text-white d-flex align-items-center justify-content-center position-relative"
->
+<section class="py-5 about-us text-white d-flex align-items-center justify-content-center position-relative">
   <!-- Overlay -->
   <div class="play-overlay"></div>
 
   <!-- Text Content -->
-  <div
-    class="content text-center"
-    style="position: relative; z-index: 2"
-    data-sal="fade"
-    data-sal-duration="800"
-    data-sal-delay="200"
-    data-sal-easing="ease-in-out"
-  >
+  <div class="content text-center" style="position: relative; z-index: 2" data-sal="fade" data-sal-duration="800" data-sal-delay="200" `data-sal-easing="ease-in-out">
     <h2 data-sal="slide-up" data-sal-duration="600" data-sal-delay="300">
       Service We Provide
     </h2>
@@ -27,56 +21,20 @@
   </div>
 </section>
 
-<section
-  class="py-4"
-  data-sal="fade"
-  data-sal-duration="600"
-  data-sal-delay="100"
-  data-sal-easing="ease"
->
+<section class="py-4" data-sal="fade" data-sal-duration="600" data-sal-delay="100" data-sal-easing="ease">
   <div class="container-fluid">
     <div class="row px-3">
-      <div
-        class="col-md-8"
-        data-sal="slide-right"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        <img src="images/service/service-icon-01.png" alt="" />
-        <h3 class="py-2">App Maintenance</h3>
-        <p style="text-align: justify">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
-          ipsum suscipit dolores dolor eligendi dignissimos omnis, laboriosam,
-          possimus ex reprehenderit voluptatibus aut. Et soluta ipsam sit
-          expedita sequi dolorum aperiam. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Nam qui incidunt provident consequatur! Repudiandae
-          molestias, distinctio pariatur corporis accusamus soluta officia
-          tempora. Aperiam aut dolorem odio illum aliquid fuga sequi.
-          <br />
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
-          ipsum suscipit dolores dolor eligendi dignissimos omnis, laboriosam,
-          possimus ex reprehenderit voluptatibus aut. Et soluta ipsam sit
-          expedita sequi dolorum aperiam. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Nam qui incidunt provident consequatur! Repudiandae
-          molestias, distinctio pariatur corporis accusamus soluta officia
-          tempora. Aperiam aut dolorem odio illum aliquid fuga sequi.
-        </p>
+      <div class="col-md-8" data-sal="slide-right" data-sal-duration="800" data-sal-delay="200">
+        {% if service.image %}
+        <img src="{{ service.image.url }}" alt="{{ service.name }}" />
+        {% endif %}
+        <h3 class="py-2">{{ service.name }}</h3>
+        <p style="text-align: justify">{{ service.overview }}</p>
       </div>
-      <div
-        class="col-md-4"
-        data-sal="slide-left"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        <div
-          class="card border-2 shadow-sm"
-          style="border-right: 1px solid var(--color-primary)"
-        >
+      <divv class="col-md-4"v data-sal="slide-left"v data-sal-duration="800"v data-sal-delay="200">
+        <div class="card border-2 shadow-sm" style="border-right: 1px solid var(--color-primary)">
           <div class="card-body py-4 px-4">
-            <h3
-              class="mb-4 footer-heading fw-bold"
-              style="color: var(--color-primary)"
-            >
+            <h3 class="mb-4 footer-heading fw-bold" style="color: var(--color-primary)">
               Social Engagement
             </h3>
             <ul class="service-details">
@@ -101,30 +59,21 @@
             </ul>
           </div>
         </div>
-      </div>
+      </divv>
     </div>
   </div>
 </section>
 
-<section
-  class="py-5"
-  style="background-color: #f4f6f7c3"
-  data-sal="slide-up"
-  data-sal-duration="800"
-  data-sal-delay="200"
->
+<section class="py-5" style="background-color: #f4f6f7c3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
   <div class="container-fluid">
     <div class="row justify-content-center align-items-center">
       <div class="col-md-10 justify-content-center">
-        <h1
-          class="text-center fw-bold mb-2"
-          style="color: var(--color-primary)"
-        >
+        <h1 class="text-center fw-bold mb-2" style="color: var(--color-primary)">
           Are you looking for above services?
         </h1>
         <p class="text-center">Talk to us and get free consultation now!</p>
         <div class="d-flex justify-content-center">
-          <a href="" class="btn btn-outline-primary text-uppercase px-4">
+          <a href="{% url 'kic:contact' %}" class="btn btn-outline-primary text-uppercase px-4">
             Contact Us
           </a>
         </div>

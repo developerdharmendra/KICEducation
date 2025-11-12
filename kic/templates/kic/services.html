@@ -1,24 +1,16 @@
 {% extends "base.html" %}
-{% load static %}
 
-{% block title %}Services{% endblock title %}
+{% block title %}
+Services - {{ SITE_NAME }}
+{% endblock title %}
 
 {% block content %}
-<section
-  class="py-5 about-us text-white d-flex align-items-center justify-content-center position-relative"
->
+<section class="py-5 about-us text-white d-flex align-items-center justify-content-center position-relative">
   <!-- Overlay -->
   <div class="play-overlay"></div>
 
   <!-- Text Content -->
-  <div
-    class="content text-center"
-    style="position: relative; z-index: 2"
-    data-sal="fade"
-    data-sal-duration="800"
-    data-sal-delay="200"
-    data-sal-easing="ease-in-out"
-  >
+  <div class="content text-center" style="position: relative; z-index: 2" data-sal="fade" data-sal-duration="800" data-sal-delay="200" data-sal-easing="ease-in-out">
     <h2 data-sal="slide-up" data-sal-duration="600" data-sal-delay="300">
       Service We Provide
     </h2>
@@ -30,96 +22,23 @@
 </section>
 
 <!-- services section start -->
-<div
-  class="services py-3"
-  data-sal="fade"
-  data-sal-duration="600"
-  data-sal-delay="100"
-  data-sal-easing="ease"
->
+<div class="services py-3" data-sal="fade" data-sal-duration="600" data-sal-delay="100" data-sal-easing="ease">
   <div class="container-fluid">
     <div class="row g-4 my-3">
-      <div
-        class="col-lg-3"
-        data-sal="slide-up"
-        data-sal-duration="500"
-        data-sal-delay="100"
-        data-sal-easing="ease-in-out"
-      >
+      {% for service in services %}
+      <div class="col-lg-3" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100" data-sal-easing="ease-in-out">
         <div class="service-item h-100 d-flex flex-column">
-          <img src="{% static 'images/service/service-icon-01.png' %}" alt="" />
-          <h4 class="py-2 mb-0 mt-2">App Maintenance</h4>
-          <p class="flex-grow-1">
-            You are not allowed to redistribute this template ZIP file on any
-            other website.
-          </p>
+          {% if service.image %}
+          <img src="{{ service.image.url }}" alt="{{ service.name }}" />
+          {% endif %}
+          <h4 class="py-2 mb-0 mt-2">{{ service.name }}</h4>
+          <p class="flex-grow-1">{{ service.overview|truncatewords:10 }}</p>
           <div class="text-button mt-1">
-            <a href="">Read More <i class="fa fa-arrow-right"></i></a>
+            <a href="{{ service.get_absolute_url }}">Read More <i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
-      <div
-        class="col-lg-3"
-        data-sal="slide-up"
-        data-sal-duration="500"
-        data-sal-delay="200"
-        data-sal-easing="ease-in-out"
-      >
-        <div class="service-item second-service h-100 d-flex flex-column">
-          <img src="{% static 'images/service/service-icon-02.png' %}" alt="" />
-          <h4 class="py-2 mb-0 mt-2">Rocket Speed of App</h4>
-          <p class="flex-grow-1">
-            You are allowed to use the Chain App Dev HTML template. Feel free to
-            modify or edit this layout.
-          </p>
-          <div class="text-button">
-            <a href="">Read More <i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-lg-3"
-        data-sal="slide-up"
-        data-sal-duration="500"
-        data-sal-delay="300"
-        data-sal-easing="ease-in-out"
-      >
-        <div class="service-item third-service h-100 d-flex flex-column">
-          <img src="{% static 'images/service/service-icon-03.png' %}" alt="" />
-          <h4 class="py-2 mb-0 mt-2">Multi Workflow Idea</h4>
-          <p class="flex-grow-1">
-            If this template is beneficial for your work, please support us
-            <a
-              rel="nofollow"
-              href="https://paypal.me/templatemo"
-              target="_blank"
-              >a little via PayPal</a
-            >. Thank you.
-          </p>
-          <div class="text-button">
-            <a href="">Read More <i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-lg-3"
-        data-sal="slide-up"
-        data-sal-duration="500"
-        data-sal-delay="400"
-        data-sal-easing="ease-in-out"
-      >
-        <div class="service-item fourth-service h-100 d-flex flex-column">
-          <img src="{% static 'images/service/service-icon-01.png' %}" alt="" />
-          <h4 class="py-2 mb-0 mt-2">24/7 Help &amp; Support</h4>
-          <p class="flex-grow-1">
-            Lorem ipsum dolor consectetur adipiscing elit sedder williamsburg
-            photo booth quinoa and fashion axe.
-          </p>
-          <div class="text-button">
-            <a href="">Read More <i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>

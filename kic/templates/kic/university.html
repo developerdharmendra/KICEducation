@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Univesities - {{ SITE_NAME }}
+{% endblock title %}
+
+{% block content %}
+<section class="py-5 university text-white d-flex align-items-center justify-content-center position-relative">
+  <!-- Overlay -->
+  <div class="play-overlay"></div>
+
+  <!-- Text Content -->
+  <div class="content text-center" style="position: relative; z-index: 2" data-sal="fade" data-sal-duration="800" data-sal-delay="200" data-sal-easing="ease-in-out">
+    <h2 data-sal="slide-up" data-sal-duration="600" data-sal-delay="300">
+      Univesities Represent by KIC
+    </h2>
+    <p data-sal="slide-up" data-sal-duration="600" data-sal-delay="500">
+      KIC guides you through every step — from university selection to
+      pre-departure — making your study abroad journey smooth and stress-free.
+    </p>
+  </div>
+</section>
+
+<section class="shop-items">
+  <div class="container-fluid">
+    <div class="row align-content-lg-stretch">
+      <div class="col-md-3 col-sm-6">
+        <div class="item">
+          <img
+            class="img-responsive"
+            src="{% static 'images/study/australia.webp' %}"
+            alt=""
+          />
+          <div class="ecom bg-lblue">
+            <a class="btn" href="">Australia</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "kic/partial/newsletter.html" %}
+{% endblock content %}

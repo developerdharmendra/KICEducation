@@ -1,24 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Training Programs{% endblock title %}
+{% block title %}
+Training Programs - {{ SITE_NAME }}
+{% endblock title %}
 
 {% block content %}
-<section
-  class="py-5 university-details text-white d-flex align-items-center justify-content-center position-relative"
->
+<section class="py-5 university-details text-white d-flex align-items-center justify-content-center position-relative">
   <!-- Overlay -->
   <div class="play-overlay"></div>
 
   <!-- Text Content -->
-  <div
-    class="content text-center"
-    style="position: relative; z-index: 2"
-    data-sal="fade"
-    data-sal-duration="800"
-    data-sal-delay="200"
-    data-sal-easing="ease-in-out"
-  >
+  <div class="content text-center" style="position: relative; z-index: 2" data-sal="fade" data-sal-duration="800" data-sal-delay="200" data-sal-easing="ease-in-out">
     <h2 data-sal="slide-up" data-sal-duration="600" data-sal-delay="300">
       Training Programs
     </h2>
