@@ -57,3 +57,5 @@ yarn.lock
 
 # Tailwind cache
 .tailwind/
+
+media/
