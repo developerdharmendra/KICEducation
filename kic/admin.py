@@ -46,7 +46,8 @@ class CounsellorAdmin(ModelAdmin):
         ('phone', 'specialization'),
         'profile_picture',
         'bio',
-        ('joined_on', 'is_active'),
+        'joined_on',
+        'is_active',
     ]
     search_fields = ['first_name', 'last_name']
     show_full_result_count = False
@@ -69,7 +70,7 @@ class ServiceAdmin(ModelAdmin):
 
 
 @admin.register(Testimonial)
-class TestimonialAdmin(admin.ModelAdmin):
+class TestimonialAdmin(ModelAdmin):
     list_display = ['full_name', 'display_order', 'created_at', 'updated_at']
     search_fields = ['full_name']
     show_full_result_count = False
@@ -85,6 +86,15 @@ class TestPreparationClassAdmin(ModelAdmin):
 
 @admin.register(University)
 class UniversityAdmin(ModelAdmin):
+    fields = [
+        'name',
+        'logo',
+        'description',
+        ('website', 'established_date'),
+        ('country', 'address', 'enrollment_season'),
+        ('ranking', 'status'),
+        'is_featured',
+    ]
     list_display = [
         'name',
         'slug',
