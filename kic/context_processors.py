@@ -8,7 +8,7 @@ def kic_global_context(request):
     preparation_classes = TestPreparationClass.objects.defer('overview')
 
     return {
-        'SITE_NAME': 'KIC Education',
+        'SITE_NAME': settings.SITE_NAME,
         'KIC_EMAIL_ADDRESS': settings.KIC_EMAIL_ADDRESS,
         'KIC_ADDRESS': settings.KIC_ADDRESS,
         'countries': countries,

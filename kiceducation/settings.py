@@ -2,6 +2,7 @@ import environ
 import os
 
 from pathlib import Path
+from django.templatetags.static import static
 
 env = environ.Env(
     # set casting, default value
@@ -29,6 +30,8 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
+    'unfold.contrib.filters',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -110,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kathmandu'
 
 USE_I18N = True
 
@@ -148,9 +151,18 @@ if DEBUG:
 
 
 # kic education constants values
+SITE_NAME = 'KIC Education'
 KIC_EMAIL_ADDRESS = 'info@kiceducation.com'
 KIC_ADDRESS = 'Biratnagar-09, Sansarimaisthan, Nepal'
 KIC_PHONE_NUMBER = 9705430592
+
+
+# django unfold configuration
+UNFOLD = {
+    'SITE_TITLE': f'{SITE_NAME} administration',
+    'SITE_HEADER': SITE_NAME,
+    'SITE_ICON': lambda request: static('images/logo.png'),
+}
 
 
 # logging configuration
