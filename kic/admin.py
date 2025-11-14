@@ -1,11 +1,13 @@
 from django.contrib import admin
+from django.db import models
+
+from tinymce.widgets import TinyMCE
+from unfold.admin import ModelAdmin
 from unfold.contrib.filters.admin import (
     BooleanRadioFilter,
     ChoicesDropdownFilter,
     RelatedCheckboxFilter,
 )
-
-from unfold.admin import ModelAdmin
 
 from .models import (
     Achievement,
@@ -28,6 +30,9 @@ class AchievementAdmin(ModelAdmin):
 
 @admin.register(Country)
 class CountryAdmin(ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': TinyMCE()},
+    }
     list_display = ['name', 'slug', 'flag']
     readonly_fields = ['slug']
     search_fields = ['name']
@@ -43,9 +48,8 @@ class CounsellorAdmin(ModelAdmin):
     list_filter_submit = True  #  add a submit button to the filter form
     fields = [
         ('first_name', 'last_name'),
-        ('phone', 'specialization'),
+        ('phone', 'specialization', 'bio'),
         'profile_picture',
-        'bio',
         'joined_on',
         'is_active',
     ]
@@ -78,6 +82,9 @@ class TestimonialAdmin(ModelAdmin):
 
 @admin.register(TestPreparationClass)
 class TestPreparationClassAdmin(ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': TinyMCE()},
+    }
     list_display = ['name', 'slug']
     readonly_fields = ['slug']
     search_fields = ['name']
@@ -95,6 +102,9 @@ class UniversityAdmin(ModelAdmin):
         ('ranking', 'status'),
         'is_featured',
     ]
+    formfield_overrides = {
+        models.TextField: {'widget': TinyMCE()},
+    }
     list_display = [
         'name',
         'slug',

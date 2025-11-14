@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'kic',
     # third-party packages
     'debug_toolbar',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -155,6 +156,21 @@ SITE_NAME = 'KIC Education'
 KIC_EMAIL_ADDRESS = 'info@kiceducation.com'
 KIC_ADDRESS = 'Biratnagar-09, Sansarimaisthan, Nepal'
 KIC_PHONE_NUMBER = 9705430592
+
+
+# django tinymce configuration
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'silver',
+    'height': 500,
+    'menubar': False,
+    'plugins': 'advlist,autolink,lists,link,image,charmap,print,preview,anchor,'
+    'searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,paste,'
+    'code,help,wordcount',
+    'toolbar': 'undo redo | formatselect | '
+    'bold italic backcolor | alignleft aligncenter '
+    'alignright alignjustify | bullist numlist outdent indent | '
+    'removeformat | help',
+}
 
 
 # django unfold configuration
