@@ -1,16 +1,14 @@
 import factory
 from faker import Faker
 
+# fmt: off
 from .models import (
     Achievement,
-    Country,
-    Counsellor,
-    Mission,
-    Service,
-    Testimonial,
-    TestPreparationClass,
+    Country, WhyStudy, CountryFact, StudyReason, FAQ,
+    Counsellor, Mission, Service, Testimonial, TestPreparationClass,
     University,
 )
+# fmt: on
 
 fake = Faker()
 
@@ -31,8 +29,43 @@ class CountryFactory(factory.django.DjangoModelFactory):
         django_get_or_create = ('name',)
 
     name = factory.Iterator(COUNTRY_LIST)
-    overview = factory.Faker('paragraph', nb_sentences=20)
     flag = factory.django.ImageField()
+    study_reason_overview = factory.Faker('paragraph', nb_sentences=10)
+
+
+class WhyStudyFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = WhyStudy
+
+    country = factory.SubFactory(CountryFactory)
+    point = factory.Faker('sentence', nb_words=10)
+
+
+class CountryFactFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = CountryFact
+
+    country = factory.SubFactory(CountryFactory)
+    fact = factory.Faker('sentence', nb_words=10)
+
+
+class StudyReasonFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = StudyReason
+
+    country = factory.SubFactory(CountryFactory)
+    reason_title = factory.Faker('sentence', nb_words=10)
+    reason_description = factory.Faker('paragraph', nb_sentences=10)
+
+
+class FAQFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = FAQ
+
+    country = factory.SubFactory(CountryFactory)
+    question = factory.Faker('sentence', nb_words=10)
+    answer = factory.Faker('paragraph', nb_sentences=10)
+    is_active = factory.Faker('random_element', elements=[True, False])
 
 
 class CounsellorFactory(factory.django.DjangoModelFactory):

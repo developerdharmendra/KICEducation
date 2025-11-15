@@ -1,24 +1,26 @@
+import logging
+
 from django.contrib import admin
 from django.db import models
 
 from tinymce.widgets import TinyMCE
-from unfold.admin import ModelAdmin
+from unfold.admin import ModelAdmin, StackedInline, TabularInline
 from unfold.contrib.filters.admin import (
     BooleanRadioFilter,
     ChoicesDropdownFilter,
     RelatedCheckboxFilter,
 )
 
+# fmt: off
 from .models import (
     Achievement,
-    Country,
-    Counsellor,
-    Mission,
-    Service,
-    Testimonial,
-    TestPreparationClass,
+    Country, WhyStudy, CountryFact, StudyReason, FAQ,
+    Counsellor, Mission, Service, Testimonial, TestPreparationClass,
     University,
 )
+# fmt: on
+
+logger = logging.getLogger(__name__)
 
 
 @admin.register(Achievement)
@@ -28,11 +30,29 @@ class AchievementAdmin(ModelAdmin):
     show_full_result_count = False
 
 
+class WhyStudyInline(TabularInline):
+    model = WhyStudy
+    tab = True
+
+
+class StudyReasonInline(StackedInline):
+    model = StudyReason
+    tab = True
+
+
+class CountryFactInline(TabularInline):
+    model = CountryFact
+    tab = True
+
+
+class FAQInline(TabularInline):
+    model = FAQ
+    tab = True
+
+
 @admin.register(Country)
 class CountryAdmin(ModelAdmin):
-    formfield_overrides = {
-        models.TextField: {'widget': TinyMCE()},
-    }
+    inlines = [WhyStudyInline, StudyReasonInline, CountryFactInline, FAQInline]
     list_display = ['name', 'slug', 'flag']
     readonly_fields = ['slug']
     search_fields = ['name']

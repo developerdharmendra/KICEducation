@@ -8,8 +8,20 @@ from django.utils.text import slugify
 class Country(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
-    flag = models.ImageField(upload_to='flags/', blank=True, null=True)
-    overview = models.TextField(help_text='Overview of why this country is ideal for students.')
+    flag = models.ImageField(upload_to='countries/')
+    study_reason_overview = models.TextField(help_text='Overview for reason to study in a country.')
+    image_1 = models.ImageField(
+        upload_to='countries/',
+        blank=True,
+        null=True,
+        help_text='Optional image for why study section.',
+    )
+    image_2 = models.ImageField(
+        upload_to='countries/',
+        blank=True,
+        null=True,
+        help_text='Optional image for reasons to study section.',
+    )
 
     class Meta:
         verbose_name_plural = 'countries'
@@ -27,6 +39,71 @@ class Country(models.Model):
 
     def get_absolute_url(self):
         return reverse('kic:country_detail', kwargs={'country_slug': self.slug})
+
+
+class WhyStudy(models.Model):
+    """Model representing why student might choose to study in a country."""
+
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='why_study')
+    point = models.CharField(max_length=255)
+    order = models.PositiveSmallIntegerField(
+        default=1, validators=[MinValueValidator(1), MaxValueValidator(10)]
+    )
+
+    # class Meta:
+    #     constraints = [
+    #         models.UniqueConstraint(fields=['country', 'point'], name='unique_country_point'),
+    #     ]
+
+    def __str__(self):
+        return f'{self.country.name} - {self.point}'
+
+
+class CountryFact(models.Model):
+    """Model representing facts of a country."""
+
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='facts')
+    fact = models.CharField(max_length=255)
+    order = models.PositiveSmallIntegerField(
+        default=1, validators=[MinValueValidator(1), MaxValueValidator(10)]
+    )
+
+    # class Meta:
+    #     constraints = [
+    #         models.UniqueConstraint(fields=['country', 'fact'], name='unique_country_fact', violation_error_message='Country with this fact already exists.'),
+    #     ]
+
+    def __str__(self):
+        return f'Facts about {self.country.name}'
+
+
+class StudyReason(models.Model):
+    """Model representing study reasons of a country."""
+
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='reasons')
+    reason_title = models.CharField(max_length=255)
+    reason_description = models.TextField(max_length=500)
+    position = models.PositiveSmallIntegerField(default=1)
+
+    def __str__(self):
+        return f'{self.country.name} - {self.reason_title}'
+
+
+class FAQ(models.Model):
+    """Model representing frequently asked questions of a country."""
+
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='faqs')
+    question = models.CharField(max_length=150)
+    answer = models.CharField(max_length=255)
+    position = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['position', '-created_at']
+
+    def __str__(self):
+        return f'{self.country.name} - {self.question}'
 
 
 class University(models.Model):

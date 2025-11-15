@@ -4,7 +4,15 @@ from typing import Any
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 
-from .models import Country, Service, TestPreparationClass
+from .models import (
+    Achievement,
+    Country,
+    Counsellor,
+    Mission,
+    Service,
+    Testimonial,
+    TestPreparationClass,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -50,6 +58,15 @@ class CountryDetailView(DetailView):
     template_name = 'kic/country_detail.html'
     context_object_name = 'country'
     slug_url_kwarg = 'country_slug'
+
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        country = self.object
+        context['why_study'] = country.why_study.all()
+        context['facts'] = country.facts.all()
+        context['reasons'] = country.reasons.all()
+        context['faqs'] = country.faqs.all()
+        return context
 
 
 class TestPreparationClassDetailView(DetailView):

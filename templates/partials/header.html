@@ -100,9 +100,7 @@
                   <ul class="submenu__list">
                     <li>
                       <a href="{{ country.get_absolute_url }}">
-                        {% if country.flat %}
                         <img src="{{ country.flag.url }}" alt="{{ country.name }}" />
-                        {% endif %}
                         <span>{{ country.name }}</span>
                       </a>
                     </li>

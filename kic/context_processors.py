@@ -4,7 +4,7 @@ from .models import Country, TestPreparationClass
 
 
 def kic_global_context(request):
-    countries = Country.objects.defer('overview')
+    countries = Country.objects.only('id', 'name', 'slug', 'flag')
     preparation_classes = TestPreparationClass.objects.defer('overview')
 
     return {
