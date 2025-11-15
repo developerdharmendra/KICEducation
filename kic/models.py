@@ -90,6 +90,60 @@ class StudyReason(models.Model):
         return f'{self.country.name} - {self.reason_title}'
 
 
+class Requirement(models.Model):
+    """Model representing requirements to study in a country."""
+
+    class LevelChoices(models.TextChoices):
+        DIPLOMA = 'DIPLOMA', 'Diploma'
+        BACHELOR = 'BACHELOR', 'Bachelor'
+        MASTER = 'MASTER', 'Master'
+        PHD = 'PhD', 'PhD'
+
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='requirements')
+    level = models.CharField(max_length=20, choices=LevelChoices.choices)
+    academic = models.CharField(
+        max_length=150, help_text='Academic requirements such as minimum GPA, prior degree, etc.'
+    )
+    language = models.CharField(
+        max_length=150, help_text='Language test requirements (IELTS, PTE, TOEFL, etc.).'
+    )
+
+    def __str__(self):
+        return f'Study requirement for {self.country.name}'
+
+
+class CostAndBudget(models.Model):
+    """Model representing estimated costs and budget to study in a country."""
+
+    class BudgetItemChoice(models.TextChoices):
+        TUITION = 'TUITION', 'Tuition (per year)'
+        VISA = 'VISA', 'Visa application fee'
+
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='budgets')
+    item = models.CharField(max_length=30, choices=BudgetItemChoice.choices)
+    estimated_amount = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'Estimated cost & budget for {self.country.name}'
+
+
+class StepProcess(models.Model):
+    """Model representing step by step process to study in a country."""
+
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='processes')
+    title = models.CharField(max_length=150)
+    description = models.TextField(max_length=500)
+    order = models.PositiveSmallIntegerField(default=1)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'processes'
+        ordering = ['order', '-created_at']
+
+    def __str__(self):
+        return f'Step by step process for {self.country.name}'
+
+
 class FAQ(models.Model):
     """Model representing frequently asked questions of a country."""
 

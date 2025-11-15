@@ -125,7 +125,7 @@
       <div class="col-md-12" data-sal="slide-left" data-sal-duration="500" data-sal-delay="100" data-sal-easing="ease-in-out">
         <h2>
           Requirements
-          <span style="color: var(--color-primary)">to Study in Australia</span>
+          <span style="color: var(--color-primary)">to Study in {{ country.name }}</span>
         </h2>
 
         <div class="table-wrap">
@@ -138,17 +138,17 @@
               </tr>
             </thead>
             <tbody>
+              {% for requirement in requirements %}
               <tr>
-                <td>Bachelor</td>
-                <td>≥ 2.4 GPA (varies by course & uni)</td>
-                <td>IELTS 6.0 (no band < 5.5) / PTE 50</td>
+                <td>{{ requirement.get_level_display }}</td>
+                <td>{{ requirement.academic }}</td>
+                <td>{{ requirement.language }}</td>
               </tr>
+              {% empty %}
               <tr>
-                <td>Master</td>
-                <td>≥ 2.6 GPA + relevant background</td>
-                <td>IELTS 6.5 (no band < 6.0) / PTE 57 (no band < 54)</td>
+                <td colspan="3" class="text-center">No requirements available.</td>
               </tr>
-              <!-- add more rows as needed -->
+              {% endfor %}
             </tbody>
           </table>
         </div>
@@ -160,13 +160,7 @@
         </p>
       </div>
 
-      <div
-        class="col-md-12 py-3"
-        data-sal="slide-right"
-        data-sal-duration="500"
-        data-sal-delay="100"
-        data-sal-easing="ease-in-out"
-      >
+      <div class="col-md-12 py-3" data-sal="slide-right" data-sal-duration="500" data-sal-delay="100" data-sal-easing="ease-in-out">
         <h2>
           Costs &
           <span style="color: var(--color-primary)">Budget (Typical)</span>
@@ -181,14 +175,16 @@
               </tr>
             </thead>
             <tbody>
+              {% for budget in budgets %}
               <tr>
-                <td>Tuition (per year)</td>
-                <td>AUD 20,000 – 35,000 (varies)</td>
+                <td>{{ budget.get_item_display }}</td>
+                <td>{{ budget.estimated_amount }}</td>
               </tr>
+              {% empty %}
               <tr>
-                <td>Visa application fee</td>
-                <td>From AUD 1,600</td>
+                <td colspan="2" class="text-center">No costs & budget available.</td>
               </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>
@@ -203,7 +199,7 @@
     <div class="row text-center justify-content-center mb-2">
       <div class="col-xl-7 col-lg-10">
         <h2 class="mb-1">
-          Study in Australia:
+          Study in {{ country.name }}:
           <span style="color: var(--color-primary)">Step by step process</span>
         </h2>
         <p class="text-muted text-center">
@@ -215,76 +211,17 @@
     </div>
 
     <div class="row process-step">
-      <div
-        class="col-md-3 text-center process-item"
-        data-sal="fade"
-        data-sal-duration="600"
-        data-sal-delay="100"
-      >
+      {% for step_process in step_processes %}
+      <div class="col-md-3 text-center process-item" data-sal="fade" data-sal-duration="600" data-sal-delay="100">
         <div class="circle">
-          <p>1</p>
+          <p>{{ forloop.counter }}</p>
         </div>
-        <h3>Shortlist course & university</h3>
-        <p>
-          Start by researching and choosing a course and institution that align
-          with your academic and career goals. Australia offers world-class
-          universities with diverse programs to match your interests.
-        </p>
+        <h3>{{ step_process.title }}</h3>
+        <p>{{ step_process.description }}</p>
       </div>
-
-      <div
-        class="col-md-3 text-center process-item"
-        data-sal="fade"
-        data-sal-duration="600"
-        data-sal-delay="200"
-      >
-        <div class="circle">
-          <p>2</p>
-        </div>
-        <h3>Prepare academic & English test documents (IELTS/PTE)</h3>
-        <p>
-          Before proceeding with your Australian student visa application, it is
-          important to verify if you meet the eligibility criteria established
-          by the Australian government
-        </p>
-      </div>
-
-      <div
-        class="col-md-3 text-center process-item"
-        data-sal="fade"
-        data-sal-duration="600"
-        data-sal-delay="300"
-      >
-        <div class="circle">
-          <p>3</p>
-        </div>
-        <h3>Apply and receive Offer Letter</h3>
-        <p>
-          Before proceeding with your Australian student visa application, it is
-          important to verify if you meet the eligibility criteria established
-          by the Australian government
-        </p>
-      </div>
-
-      <div
-        class="col-md-3 text-center process-item"
-        data-sal="fade"
-        data-sal-duration="600"
-        data-sal-delay="400"
-      >
-        <div class="circle">
-          <p>4</p>
-        </div>
-        <h3>
-          Arrange funds & pay initial fees; receive Confirmation of Enrolment
-          (CoE)
-        </h3>
-        <p>
-          Before proceeding with your Australian student visa application, it is
-          important to verify if you meet the eligibility criteria established
-          by the Australian government
-        </p>
-      </div>
+      {% empty %}
+      <p class="text-center">No step by step process available.</p>
+      {% endfor %}
 
       <div class="col-md-12 text-center pt-3">
         <div class="">

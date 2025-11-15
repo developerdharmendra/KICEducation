@@ -13,10 +13,9 @@ from unfold.contrib.filters.admin import (
 
 # fmt: off
 from .models import (
-    Achievement,
-    Country, WhyStudy, CountryFact, StudyReason, FAQ,
-    Counsellor, Mission, Service, Testimonial, TestPreparationClass,
-    University,
+    Achievement, Country, WhyStudy, CountryFact, StudyReason, Requirement,
+    CostAndBudget, StepProcess, FAQ, Counsellor, Mission, Service, Testimonial,
+    TestPreparationClass, University,
 )
 # fmt: on
 
@@ -45,6 +44,21 @@ class CountryFactInline(TabularInline):
     tab = True
 
 
+class RequirementInline(TabularInline):
+    model = Requirement
+    tab = True
+
+
+class CostAndBudgetInline(TabularInline):
+    model = CostAndBudget
+    tab = True
+
+
+class StepProcessInline(TabularInline):
+    model = StepProcess
+    tab = True
+
+
 class FAQInline(TabularInline):
     model = FAQ
     tab = True
@@ -52,7 +66,15 @@ class FAQInline(TabularInline):
 
 @admin.register(Country)
 class CountryAdmin(ModelAdmin):
-    inlines = [WhyStudyInline, StudyReasonInline, CountryFactInline, FAQInline]
+    inlines = [
+        WhyStudyInline,
+        StudyReasonInline,
+        CountryFactInline,
+        RequirementInline,
+        CostAndBudgetInline,
+        StepProcessInline,
+        FAQInline,
+    ]
     list_display = ['name', 'slug', 'flag']
     readonly_fields = ['slug']
     search_fields = ['name']
@@ -62,7 +84,7 @@ class CountryAdmin(ModelAdmin):
 
 @admin.register(Counsellor)
 class CounsellorAdmin(ModelAdmin):
-    list_display = ['first_name', 'last_name', 'phone', 'position', 'joined_on']
+    list_display = ['first_name', 'last_name', 'phone', 'position', 'joined_on', 'is_active']
     list_display_links = ['first_name', 'last_name']
     list_filter = [('is_active', BooleanRadioFilter)]
     list_filter_submit = True  #  add a submit button to the filter form

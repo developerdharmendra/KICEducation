@@ -3,10 +3,9 @@ from faker import Faker
 
 # fmt: off
 from .models import (
-    Achievement,
-    Country, WhyStudy, CountryFact, StudyReason, FAQ,
-    Counsellor, Mission, Service, Testimonial, TestPreparationClass,
-    University,
+    Achievement, Country, WhyStudy, CountryFact, StudyReason, Requirement,
+    CostAndBudget, StepProcess, FAQ, Counsellor, Mission, Service, Testimonial,
+    TestPreparationClass, University,
 )
 # fmt: on
 
@@ -56,6 +55,34 @@ class StudyReasonFactory(factory.django.DjangoModelFactory):
     country = factory.SubFactory(CountryFactory)
     reason_title = factory.Faker('sentence', nb_words=10)
     reason_description = factory.Faker('paragraph', nb_sentences=10)
+
+
+class RequirementFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Requirement
+
+    country = factory.SubFactory(CountryFactory)
+    level = factory.Iterator(Requirement.LevelChoices.values)
+    academic = factory.Faker('paragraph', nb_sentences=5)
+    language = factory.Faker('paragraph', nb_sentences=5)
+
+
+class CostAndBudgetFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = CostAndBudget
+
+    country = factory.SubFactory(CountryFactory)
+    item = factory.Iterator(CostAndBudget.BudgetItemChoice.values)
+    estimated_amount = factory.Faker('pricetag')
+
+
+class StepProcessFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = StepProcess
+
+    country = factory.SubFactory(CountryFactory)
+    title = factory.Faker('text', max_nb_chars=5)
+    description = factory.Faker('paragraph', nb_sentences=5)
 
 
 class FAQFactory(factory.django.DjangoModelFactory):

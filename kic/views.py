@@ -125,6 +125,9 @@ class CountryDetailView(DetailView):
         context['why_study'] = country.why_study.all()
         context['facts'] = country.facts.all()
         context['reasons'] = country.reasons.all()
+        context['requirements'] = country.requirements.all()
+        context['budgets'] = country.budgets.all()
+        context['step_processes'] = country.processes.all()[:4]
         context['faqs'] = country.faqs.all()
         return context
 

@@ -5,6 +5,9 @@ from kic.factories import (
     WhyStudyFactory,
     StudyReasonFactory,
     CountryFactFactory,
+    RequirementFactory,
+    CostAndBudgetFactory,
+    StepProcessFactory,
     FAQFactory,
     CounsellorFactory,
     MissionFactory,
@@ -27,6 +30,18 @@ class Command(BaseCommand):
             '--reasons', type=int, default=20, help='Number of reasons to study in a counry'
         )
         parser.add_argument('--facts', type=int, default=20, help='Number of facts about a counry')
+        parser.add_argument(
+            '--requirements', type=int, default=20, help='Number of requirements about a counry'
+        )
+        parser.add_argument(
+            '--budgets', type=int, default=20, help='Number of cost & budget for a counry'
+        )
+        parser.add_argument(
+            '--step_processes',
+            type=int,
+            default=20,
+            help='Number of step by step process for a counry',
+        )
         parser.add_argument('--faqs', type=int, default=20, help='Number of FAQs for a counry')
         parser.add_argument('--counsellors', type=int, default=5, help='Number of counsellors')
         parser.add_argument('--missions', type=int, default=5, help='Number of missions')
@@ -42,6 +57,9 @@ class Command(BaseCommand):
         why_study = kwargs['why_study']
         reasons = kwargs['reasons']
         facts = kwargs['facts']
+        requirements = kwargs['requirements']
+        budgets = kwargs['budgets']
+        step_processes = kwargs['step_processes']
         faqs = kwargs['faqs']
         missions = kwargs['counsellors']
         missions = kwargs['missions']
@@ -54,6 +72,9 @@ class Command(BaseCommand):
         WhyStudyFactory.create_batch(why_study)
         StudyReasonFactory.create_batch(reasons)
         CountryFactFactory.create_batch(facts)
+        RequirementFactory.create_batch(requirements)
+        CostAndBudgetFactory.create_batch(budgets)
+        StepProcessFactory.create_batch(step_processes)
         FAQFactory.create_batch(faqs)
         UniversityFactory.create_batch(universities)
 

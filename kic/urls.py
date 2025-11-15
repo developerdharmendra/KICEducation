@@ -7,7 +7,7 @@ app_name = 'kic'
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('universities/', UniversityView.as_view(), name='university'),
-        path(
+    path(
         'universities/<slug:university_slug>/',
         UniversityDetailView.as_view(),
         name='university_detail',
