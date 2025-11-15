@@ -20,6 +20,12 @@ logger = logging.getLogger(__name__)
 class HomeView(TemplateView):
     template_name = 'kic/index.html'
 
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['counsellors'] = Counsellor.objects.filter(is_active=True)
+        context['testimonials'] = Testimonial.objects.filter(is_featured=True)
+        return context
+
 
 class UniversityView(TemplateView):
     template_name = 'kic/university.html'

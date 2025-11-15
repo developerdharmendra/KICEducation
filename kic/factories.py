@@ -75,10 +75,11 @@ class CounsellorFactory(factory.django.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
     phone = factory.Faker('phone_number')
-    specialization = factory.Faker('text', max_nb_chars=5)
+    position = factory.Faker('text', max_nb_chars=5)
     bio = factory.Faker('sentence', nb_words=10)
     profile_picture = factory.django.ImageField()
     joined_on = factory.Faker('date')
+    is_active = factory.Faker('random_element', elements=[True, False])
 
 
 class MissionFactory(factory.django.DjangoModelFactory):
@@ -103,7 +104,10 @@ class TestimonialFactory(factory.django.DjangoModelFactory):
 
     full_name = factory.Faker('name')
     comment = factory.Faker('paragraph', nb_sentences=10)
+    rating = factory.Faker('random_int', min=1, max=5)
+    college = factory.Faker('text', max_nb_chars=5)
     client_photo = factory.django.ImageField()
+    is_featured = factory.Faker('random_element', elements=[True, False])
 
 
 class TestPreparationClassFactory(factory.django.DjangoModelFactory):

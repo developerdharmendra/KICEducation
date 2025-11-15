@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_filters %}
 {% load static %}
 
 {% block title %}KIC Education{% endblock title %}
@@ -249,34 +250,21 @@
         with top-ranked universities and diverse academic programs.
       </p>
       <div class="country-slider row slick-e d-flex flex-row">
+        {% for country in countries %}
         <div class="col-md-2 col-sm-4 col-6 py-3">
-          <a href="">
+          <a href="{{ country.get_absolute_url }}">
             <div class="country-box">
               <div class="country-image">
-                <img src="{% static 'images/USA.png' %}" alt="USA" />
+                <img src="{{ country.flag.url }}" alt="{{ country.name }}" />
               </div>
-              <h4 class="country-name">USA</h4>
+              <h4 class="country-name">{{ country.name }}</h4>
             </div>
           </a>
         </div>
+        {% empty %}
+        <p class="text-center">No top study destinations available.</p>
+        {% endfor %}
       </div>
-      <!-- <div class="d-flex justify-content-center my-4">
-          <a href="" class="btn-custom">
-            <span>Apply Now</span>
-            <svg
-              class="external-arrow"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
-              ></path>
-            </svg>
-          </a>
-        </div> -->
     </div>
   </div>
   <!-- study destination section end -->
@@ -293,43 +281,29 @@
         Get personalized guidance from our experienced education consultants.
       </p>
       <div class="counsellor-slider slick-d">
-        <div
-          class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center"
-        >
+        {% for counsellor in counsellors %}
+        <div class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center">
           <div class="card mx-2">
             <img
               class="card-img-top object-fit"
-              src="https://media.istockphoto.com/id/1369199360/photo/portrait-of-a-handsome-young-businessman-working-in-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=bcGyGG1qPMyxl3rw4TCVwbJLZTPabFg4twsVFDy-ixs="
-              alt="Card image cap"
+              src="{{ counsellor.profile_picture.url }}"
+              alt="{{ counsellor.get_full_name }}'s profile"
               style="height: 170px"
             />
             <div class="card-body align-content-center">
-              <h5 class="card-title text-center mb-0">Dharmendra Kumar Ram</h5>
-              <p class="text-center p-0 m-0 fst-italic mb-1">CEO</p>
-              <p class="card-text text-center" style="font-size: 14px">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, illum?
-              </p>
+              <h5 class="card-title text-center mb-0">{{ counsellor.get_full_name }}</h5>
+              <p class="text-center p-0 m-0 fst-italic mb-1">{{ counsellor.position }}</p>
               <div class="text-center mb-2">
-                <a href="" class="apply_now" target="_blank">
-                  <span> View More Details </span>
-                  <svg
-                    class="external-arrow"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
-                    ></path>
-                  </svg>
+                <a href="#" class="apply_now">
+                  <span>View More Details</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
+        {% empty %}
+        <p class="text-center">No counsellors available.</p>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -441,6 +415,7 @@
         worldwide to provide you with the best opportunities.
       </p>
       <div class="country-slider row slick-e d-flex flex-row">
+        {% for institution in institutions %}
         <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
           <div class="partner-test-class-list">
             <a href="" target="_blank">
@@ -448,6 +423,9 @@
             </a>
           </div>
         </div>
+        {% empty %}
+        <p class="text-center">No global institutions & partners available.</p>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -490,18 +468,12 @@
           </h2>
 
           <div class="country-slider slick-a">
+            {% for testimonial in testimonials %}
             <div class="col-sm-12 p-sm-3 p-2">
               <div class="">
                 <p>
-                  <i
-                    class="bi bi-quote quote-icon-left"
-                    style="color: green; font-size: 20px"
-                  ></i>
-                  &nbsp;Lorem ipsum dolor sit amet consectetur, adipisicing
-                  elit. Commodi porro facere perspiciatis dignissimos,
-                  asperiores quo voluptatibus impedit adipisci sed incidunt!
-                  Fugit exercitationem dolores autem cumque nam ipsa aperiam
-                  veniam vel? &nbsp;
+                  <i class="bi bi-quote quote-icon-left" style="color: green; font-size: 20px"></i>
+                  &nbsp;{{ testimonial.comment }}&nbsp;
                   <i
                     class="bi bi-quote quote-icon-right"
                     style="
@@ -515,27 +487,22 @@
               </div>
               <div class="d-flex gap-4 align-items-center">
                 <div class="box">
-                  <img
-                    src="{% static 'images/icon.png' %}"
-                    alt=""
-                    class="image-testimonial"
-                  />
+                  <img class="image-testimonial" src="{{ testimonial.client_photo.url }}" alt="{{ testimonial.full_name }}'s profile" />
                 </div>
                 <div class="">
-                  <h3 class="m-0">Kathmandu</h3>
-                  <p class="py-0 mb-1">Aspire2 International, Tauranga</p>
+                  <h3 class="m-0">{{ testimonial.full_name }}</h3>
+                  <p class="py-0 mb-1">{{ testimonial.college }}</p>
                   <span>
-                    <i class="bi bi-star-fill" style="color: #ffa127"></i>
-                    <i class="bi bi-star-fill" style="color: #ffa127"></i
-                    >&nbsp;<i
-                      class="bi bi-star-fill"
-                      style="color: #ffa127"
-                    ></i>
-                    <i class="bi bi-star-half" style="color: #ffa127"></i
-                  ></span>
+                    {% for i in testimonial.rating|num_range %}
+                      <i class="bi bi-star-fill" style="color: #ffa127"></i>
+                    {% endfor %}
+                  </span>
                 </div>
               </div>
             </div>
+            {% empty %}
+            <p>No testimonials available.</p>
+            {% endfor %}
           </div>
         </div>
         <!-- testimonial section end -->

@@ -216,16 +216,16 @@ class Counsellor(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=15, unique=True)
-    specialization = models.CharField(max_length=100, help_text='Area of expertise')
-    bio = models.TextField()
+    position = models.CharField(max_length=100, help_text='Position in the consultancy')
+    bio = models.TextField(max_length=1000)
     profile_picture = models.ImageField(upload_to='counsellors/')
-    joined_on = models.DateTimeField()
+    joined_on = models.DateField()
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self._meta.model_name}'
+        return f'{self._meta.model_name} - {self.get_full_name()}'
 
     def get_full_name(self):
         return f'{self.first_name} {self.last_name}'
@@ -236,10 +236,15 @@ class Testimonial(models.Model):
 
     full_name = models.CharField(max_length=120)
     comment = models.TextField(max_length=2000)
+    rating = models.PositiveSmallIntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)]
+    )
+    college = models.CharField(max_length=255)
     client_photo = models.ImageField(upload_to='testimonials/')
     display_order = models.PositiveIntegerField(
         default=0, help_text='Order in which testimonial appears.'
     )
+    is_featured = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

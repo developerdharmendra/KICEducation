@@ -62,14 +62,15 @@ class CountryAdmin(ModelAdmin):
 
 @admin.register(Counsellor)
 class CounsellorAdmin(ModelAdmin):
-    list_display = ['first_name', 'last_name', 'phone', 'specialization', 'joined_on']
+    list_display = ['first_name', 'last_name', 'phone', 'position', 'joined_on']
     list_display_links = ['first_name', 'last_name']
     list_filter = [('is_active', BooleanRadioFilter)]
     list_filter_submit = True  #  add a submit button to the filter form
     fields = [
         ('first_name', 'last_name'),
-        ('phone', 'specialization', 'bio'),
+        ('phone', 'position'),
         'profile_picture',
+        'bio',
         'joined_on',
         'is_active',
     ]
@@ -80,24 +81,40 @@ class CounsellorAdmin(ModelAdmin):
 
 @admin.register(Mission)
 class MissionAdmin(ModelAdmin):
-    list_display = ['title', 'image']
+    list_display = ['title', 'icon_name']
     search_fields = ['name']
     show_full_result_count = False
+    show_facets = admin.ShowFacets.NEVER
 
 
 @admin.register(Service)
 class ServiceAdmin(ModelAdmin):
-    list_display = ['name', 'slug', 'image']
+    list_display = ['name', 'slug', 'icon_name']
     readonly_fields = ['slug']
     search_fields = ['name']
     show_full_result_count = False
+    show_facets = admin.ShowFacets.NEVER
 
 
 @admin.register(Testimonial)
 class TestimonialAdmin(ModelAdmin):
-    list_display = ['full_name', 'display_order', 'created_at', 'updated_at']
+    list_display = [
+        'full_name',
+        'rating',
+        'college',
+        'display_order',
+        'is_featured',
+        'created_at',
+        'updated_at',
+    ]
+    # TODO: Add filter by rating
+    list_filter = [
+        ('is_featured', BooleanRadioFilter),
+    ]
+    list_filter_submit = True  #  add a submit button to the filter form
     search_fields = ['full_name']
     show_full_result_count = False
+    show_facets = admin.ShowFacets.NEVER
 
 
 @admin.register(TestPreparationClass)
