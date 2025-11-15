@@ -1,9 +1,13 @@
 import logging
 from typing import Any
 
-from django.views.generic.base import TemplateView
+from django.conf import settings
+from django.core.mail import EmailMessage
+from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 
+from .forms import ContactusForm
 from .models import (
     Achievement,
     Country,
@@ -69,8 +73,26 @@ class AboutView(TemplateView):
         return context
 
 
-class ContactView(TemplateView):
-    template_name = 'kic/contact.html'
+def contact_us(request):
+    if request.method == 'POST':
+        form = ContactusForm(request.POST)
+        if form.is_valid():
+            user_email: str = form.cleaned_data.get('email')
+            subject: str = form.cleaned_data.get('subject')
+            message = form.cleaned_data.get('message')
+
+            email = EmailMessage(
+                subject=subject,
+                body=message,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[settings.DEFAULT_TO_EMAIL],
+                reply_to=[user_email],
+            )
+            email.send()
+            return redirect('kic:contact')
+    else:
+        form = ContactusForm()
+    return render(request, 'kic/contact.html', {'form': form})
 
 
 class CountryDetailView(DetailView):

@@ -11,7 +11,7 @@ urlpatterns = [
     path('services/', ServicesView.as_view(), name='services'),
     path('services/<slug:service_slug>/', ServiceDetailView.as_view(), name='service_detail'),
     path('about/', AboutView.as_view(), name='about'),
-    path('contact/', ContactView.as_view(), name='contact'),
+    path('contact/', contact_us, name='contact'),
     path('<slug:country_slug>/', CountryDetailView.as_view(), name='country_detail'),
     path(
         'preparations/<slug:preparation_class_slug>/',

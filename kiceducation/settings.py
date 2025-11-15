@@ -158,6 +158,21 @@ KIC_ADDRESS = 'Biratnagar-09, Sansarimaisthan, Nepal'
 KIC_PHONE_NUMBER = 9705430592
 
 
+# Email backend configuration
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = env.str('EMAIL_HOST')
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')  # sender email address for outgoing email
+DEFAULT_TO_EMAIL = env('DEFAULT_TO_EMAIL')  # recipient email address
+
+
 # django tinymce configuration
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'silver',

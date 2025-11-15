@@ -43,7 +43,8 @@ Contact Us - {{ SITE_NAME }}
     <div class="row flex-row-reverse">
       <div class="col-md-7 col-lg-8 m-15px-tb">
         <div class="contact-form">
-          <form action="/" method="post" class="contactform contact_form" id="contact_form">
+          <form action="{% url 'kic:contact' %}" method="post" class="contactform contact_form" id="contact_form">
+            {% csrf_token %}
             <div
               class="returnmessage valid-feedback p-15px-b"
               data-success="Your message has been received, We will contact you soon."
@@ -54,22 +55,22 @@ Contact Us - {{ SITE_NAME }}
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input id="name" type="text" placeholder="Full Name" class="form-control" />
+                  {{ form.full_name }}
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <input id="email" type="text" placeholder="Email Address" class="form-control" />
+                  {{ form.email }}
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <input id="phone" type="number" placeholder="Phone Number" class="form-control" />
+                  {{ form.phone_number }}
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <input id="subject" type="text" placeholder="Subject" class="form-control" />
+                  {{ form.subject }}
                 </div>
               </div>
               <!-- <div class="col-md-6">
@@ -91,15 +92,13 @@ Contact Us - {{ SITE_NAME }}
 
               <div class="col-md-12">
                 <div class="form-group">
-                  <textarea id="message" placeholder="Message" class="form-control" rows="3"></textarea>
+                  {{ form.message }}
                 </div>
               </div>
 
               <div class="col-md-12">
                 <div class="send">
-                  <a id="send_message" class="px-btn theme" href="#">
-                    <span>Contact Us</span> <i class="arrow"></i
-                  ></a>
+                  <button type="submit" class="btn btn-primary">Contact Us</button>
                 </div>
               </div>
             </div>
