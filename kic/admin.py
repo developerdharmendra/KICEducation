@@ -3,6 +3,7 @@ import logging
 from django.contrib import admin
 from django.db import models
 
+from django.http import HttpRequest
 from tinymce.widgets import TinyMCE
 from unfold.admin import ModelAdmin, StackedInline, TabularInline
 from unfold.contrib.filters.admin import (
@@ -32,36 +33,78 @@ class AchievementAdmin(ModelAdmin):
 class WhyStudyInline(TabularInline):
     model = WhyStudy
     tab = True
+    max_num = 10
+
+    def get_queryset(self, request: HttpRequest) -> models.QuerySet:
+        queryset = super().get_queryset(request)
+        queryset = queryset.select_related('country')
+        return queryset
 
 
 class StudyReasonInline(StackedInline):
     model = StudyReason
     tab = True
+    max_num = 10
+
+    def get_queryset(self, request: HttpRequest) -> models.QuerySet:
+        queryset = super().get_queryset(request)
+        queryset = queryset.select_related('country')
+        return queryset
 
 
 class CountryFactInline(TabularInline):
     model = CountryFact
     tab = True
+    max_num = 10
+
+    def get_queryset(self, request: HttpRequest) -> models.QuerySet:
+        queryset = super().get_queryset(request)
+        queryset = queryset.select_related('country')
+        return queryset
 
 
 class RequirementInline(TabularInline):
     model = Requirement
     tab = True
+    max_num = 10
+
+    def get_queryset(self, request: HttpRequest) -> models.QuerySet:
+        queryset = super().get_queryset(request)
+        queryset = queryset.select_related('country')
+        return queryset
 
 
 class CostAndBudgetInline(TabularInline):
     model = CostAndBudget
     tab = True
+    max_num = 10
+
+    def get_queryset(self, request: HttpRequest) -> models.QuerySet:
+        queryset = super().get_queryset(request)
+        queryset = queryset.select_related('country')
+        return queryset
 
 
 class StepProcessInline(TabularInline):
     model = StepProcess
     tab = True
+    max_num = 10
+
+    def get_queryset(self, request: HttpRequest) -> models.QuerySet:
+        queryset = super().get_queryset(request)
+        queryset = queryset.select_related('country')
+        return queryset
 
 
 class FAQInline(TabularInline):
     model = FAQ
     tab = True
+    max_num = 10
+
+    def get_queryset(self, request: HttpRequest) -> models.QuerySet:
+        queryset = super().get_queryset(request)
+        queryset = queryset.select_related('country')
+        return queryset
 
 
 @admin.register(Country)
