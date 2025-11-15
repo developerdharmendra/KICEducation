@@ -95,19 +95,19 @@ About Us - {{ SITE_NAME }}
             </p>
 
             <div class="row">
+              {% for mission in missions %}
               <div class="col-lg-12 mt-4 pt-2">
                 <div class="media align-items-center rounded shadow p-3">
                   <h4 class="ml-3 mb-0">
-                    <i class="fa fa-play h4 mb-0 text-custom"></i> Visoin
+                    <i class="fa fa-{{ mission.icon_name }} h4 mb-0 text-custom"></i>&nbsp;
+                    {{ mission.title|capfirst }}
                   </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Possimus asperiores consequuntur, veritatis voluptate rerum
-                    laboriosam. Dolor molestias aut maiores error vero, enim
-                    consectetur ut. Facere quidem illo exercitationem vero ipsa.
-                  </p>
+                  <p>{{ mission.description }}</p>
                 </div>
               </div>
+              {% empty %}
+              <p class="text-center">No mission data available.</p>
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -129,22 +129,18 @@ About Us - {{ SITE_NAME }}
       of guiding students abroad. Be part of a team that changes lives.
     </p>
     <div class="counsellor-slider slick-d">
+      {% for achievement in achievements %}
       <div class="col-sm-3 col-12 d-flex flex-column justify-content-start align-items-center">
         <div class="card mx-2">
-          <img
-            class="card-img-top object-fit"
-            src="https://images.unsplash.com/photo-1570610159825-ec5d3823660c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2VydGlmaWNhdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"
-            alt="Card image cap"
-            style="height: 170px"
-          />
+          <img class="card-img-top object-fit" src="{{ achievement.image.url }}" alt="{{ achievement.title }}" style="height: 170px">
           <div class="card-body">
-            <p class="card-text text-center text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              illum?
-            </p>
+            <p class="card-text text-center">{{ achievement.title }}</p>
           </div>
         </div>
       </div>
+      {% empty %}
+      <p class="text-center">No achievements data available.</p>
+      {% endfor %}
     </div>
   </div>
 </div>

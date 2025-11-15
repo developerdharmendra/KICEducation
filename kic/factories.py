@@ -20,7 +20,7 @@ class AchievementFactory(factory.django.DjangoModelFactory):
         model = Achievement
 
     title = factory.Faker('text', max_nb_chars=10)
-    description = factory.Faker('paragraph', nb_sentences=10)
+    image = factory.django.ImageField()
 
 
 class CountryFactory(factory.django.DjangoModelFactory):
@@ -88,6 +88,7 @@ class MissionFactory(factory.django.DjangoModelFactory):
 
     title = factory.Faker('text', max_nb_chars=5)
     description = factory.Faker('paragraph', nb_sentences=20)
+    icon_name = factory.Faker('text', max_nb_chars=5)
 
 
 class ServiceFactory(factory.django.DjangoModelFactory):
@@ -95,6 +96,7 @@ class ServiceFactory(factory.django.DjangoModelFactory):
         model = Service
 
     name = factory.Faker('text', max_nb_chars=20)
+    icon_name = factory.Faker('text', max_nb_chars=5)
     overview = factory.Faker('paragraph', nb_sentences=20)
 
 
@@ -115,6 +117,7 @@ class TestPreparationClassFactory(factory.django.DjangoModelFactory):
         model = TestPreparationClass
 
     name = factory.Faker('word')
+    logo = factory.django.ImageField()
     overview = factory.Faker('paragraph', nb_sentences=20)
 
 
@@ -126,7 +129,7 @@ class UniversityFactory(factory.django.DjangoModelFactory):
     logo = factory.django.ImageField(width=200, height=200)
     description = factory.Faker('paragraph', nb_sentences=20)
     website = factory.Faker('url')
-    enrollment_season = factory.Faker('text', max_nb_chars=5)
-    country = factory.SubFactory(CountryFactory)
     established_date = factory.Faker('date')
     address = factory.Faker('address')
+    enrollment_season = factory.Faker('text', max_nb_chars=5)
+    country = factory.SubFactory(CountryFactory)

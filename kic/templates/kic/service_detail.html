@@ -25,9 +25,7 @@
   <div class="container-fluid">
     <div class="row px-3">
       <div class="col-md-8" data-sal="slide-right" data-sal-duration="800" data-sal-delay="200">
-        {% if service.image %}
-        <img src="{{ service.image.url }}" alt="{{ service.name }}" />
-        {% endif %}
+        <!-- service icon here -->
         <h3 class="py-2">{{ service.name }}</h3>
         <p style="text-align: justify">{{ service.overview }}</p>
       </div>
@@ -35,27 +33,16 @@
         <div class="card border-2 shadow-sm" style="border-right: 1px solid var(--color-primary)">
           <div class="card-body py-4 px-4">
             <h3 class="mb-4 footer-heading fw-bold" style="color: var(--color-primary)">
-              Social Engagement
+              Related services
             </h3>
             <ul class="service-details">
+              {% for related_service in related_services %}
               <li>
-                <a href="service-details.html"
-                  ><i class="bi bi-circle-fill"></i> Career Counselling
+                <a href="{{ related_service.get_absolute_url }}"
+                  ><i class="bi bi-circle-fill"></i> {{ related_service.name }}
                 </a>
               </li>
-
-              <li>
-                <a href="service-details.html"
-                  ><i class="bi bi-circle-fill"></i> Country & University
-                  selection</a
-                >
-              </li>
-
-              <li>
-                <a href="service-details.html"
-                  ><i class="bi bi-circle-fill"></i> Student Screening</a
-                >
-              </li>
+              {% endfor %}
             </ul>
           </div>
         </div>

@@ -20,6 +20,16 @@ class CustomUserAdmin(BaseUserAdmin, ModelAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
+    list_display = [
+        'username',
+        'email',
+        'first_name',
+        'last_name',
+        'is_active',
+        'is_superuser',
+        'is_staff',
+        'date_joined',
+    ]
     list_display_links = ['username', 'email']
     list_filter = [
         ('is_staff', BooleanRadioFilter),

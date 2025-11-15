@@ -28,9 +28,7 @@ Services - {{ SITE_NAME }}
       {% for service in services %}
       <div class="col-lg-3" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100" data-sal-easing="ease-in-out">
         <div class="service-item h-100 d-flex flex-column">
-          {% if service.image %}
-          <img src="{{ service.image.url }}" alt="{{ service.name }}" />
-          {% endif %}
+          <!-- service icon here -->
           <h4 class="py-2 mb-0 mt-2">{{ service.name }}</h4>
           <p class="flex-grow-1">{{ service.overview|truncatewords:10 }}</p>
           <div class="text-button mt-1">
@@ -38,6 +36,8 @@ Services - {{ SITE_NAME }}
           </div>
         </div>
       </div>
+      {% empty %}
+      <p class="text-center">No services available.</p>
       {% endfor %}
     </div>
   </div>

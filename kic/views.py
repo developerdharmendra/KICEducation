@@ -22,6 +22,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        context['services'] = Service.objects.all()
         context['counsellors'] = Counsellor.objects.filter(is_active=True)
         context['testimonials'] = Testimonial.objects.filter(is_featured=True)
         return context
@@ -50,9 +51,22 @@ class ServiceDetailView(DetailView):
     context_object_name = 'service'
     slug_url_kwarg = 'service_slug'
 
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        service = self.object
+        related_services = Service.objects.exclude(slug=service.slug)
+        context['related_services'] = related_services
+        return context
+
 
 class AboutView(TemplateView):
     template_name = 'kic/about.html'
+
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['achievements'] = Achievement.objects.all()[:5]
+        context['missions'] = Mission.objects.all()[:3]
+        return context
 
 
 class ContactView(TemplateView):

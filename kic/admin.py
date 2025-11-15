@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 @admin.register(Achievement)
 class AchievementAdmin(ModelAdmin):
-    list_display = ['title', 'date', 'icon']
+    list_display = ['title', 'date']
     search_fields = ['title']
     show_full_result_count = False
 
@@ -126,6 +126,7 @@ class TestPreparationClassAdmin(ModelAdmin):
     readonly_fields = ['slug']
     search_fields = ['name']
     show_full_result_count = False
+    show_facets = admin.ShowFacets.NEVER
 
 
 @admin.register(University)
