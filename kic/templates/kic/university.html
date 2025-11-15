@@ -25,18 +25,17 @@ Univesities - {{ SITE_NAME }}
 <section class="shop-items">
   <div class="container-fluid">
     <div class="row align-content-lg-stretch">
-      <div class="col-md-3 col-sm-6">
+      {% for university in universities %}
+      <div class="col-md-2 col-sm-6">
         <div class="item">
-          <img
-            class="img-responsive"
-            src="{% static 'images/study/australia.webp' %}"
-            alt=""
-          />
-          <div class="ecom bg-lblue">
-            <a class="btn" href="">Australia</a>
-          </div>
+          <a href="{{ university.get_absolute_url }}">
+            <img class="img-responsive" src="{{ university.logo.url }}" alt="{{ university.name }} logo" />
+          </a>
         </div>
       </div>
+      {% empty %}
+      <p class="text-center pt-2">No universities available.</p>
+      {% endfor %}
     </div>
   </div>
 </section>

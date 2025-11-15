@@ -133,3 +133,4 @@ class UniversityFactory(factory.django.DjangoModelFactory):
     address = factory.Faker('address')
     enrollment_season = factory.Faker('text', max_nb_chars=5)
     country = factory.SubFactory(CountryFactory)
+    is_featured = factory.Faker('random_element', elements=[True, False])

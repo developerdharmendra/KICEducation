@@ -410,8 +410,8 @@
         {% for institution in institutions %}
         <div class="col-6 col-sm-3 col-md-2 p-sm-3 p-2">
           <div class="partner-test-class-list">
-            <a href="" target="_blank">
-              <img src="{% static 'images/western.png' %}" alt="Partner Logo" />
+            <a href="{{ institution.get_absolute_url }}">
+              <img src="{{ institution.logo.url }}" alt="{{ institution.name }} logo" />
             </a>
           </div>
         </div>

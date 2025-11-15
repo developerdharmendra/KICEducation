@@ -16,6 +16,7 @@ from .models import (
     Service,
     Testimonial,
     TestPreparationClass,
+    University,
 )
 
 logger = logging.getLogger(__name__)
@@ -28,12 +29,29 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['services'] = Service.objects.all()
         context['counsellors'] = Counsellor.objects.filter(is_active=True)
+        context['institutions'] = University.objects.filter(
+            status=University.StatusChoices.ACTIVE, is_featured=True
+        )
         context['testimonials'] = Testimonial.objects.filter(is_featured=True)
         return context
 
 
 class UniversityView(TemplateView):
     template_name = 'kic/university.html'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['universities'] = University.objects.filter(status=University.StatusChoices.ACTIVE)
+        return context
+
+
+class UniversityDetailView(DetailView):
+    template_name = 'kic/university_detail.html'
+    context_object_name = 'university'
+    slug_url_kwarg = 'university_slug'
+
+    def get_queryset(self):
+        return University.objects.filter(status=University.StatusChoices.ACTIVE)
 
 
 class TrainingView(TemplateView):
