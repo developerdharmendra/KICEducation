@@ -63,8 +63,8 @@ class RequirementFactory(factory.django.DjangoModelFactory):
 
     country = factory.SubFactory(CountryFactory)
     level = factory.Iterator(Requirement.LevelChoices.values)
-    academic = factory.Faker('paragraph', nb_sentences=5)
-    language = factory.Faker('paragraph', nb_sentences=5)
+    academic = factory.Faker('sentence', nb_words=10)
+    language = factory.Faker('sentence', nb_words=10)
 
 
 class CostAndBudgetFactory(factory.django.DjangoModelFactory):
@@ -91,7 +91,7 @@ class FAQFactory(factory.django.DjangoModelFactory):
 
     country = factory.SubFactory(CountryFactory)
     question = factory.Faker('sentence', nb_words=10)
-    answer = factory.Faker('paragraph', nb_sentences=10)
+    answer = factory.Faker('sentence', nb_words=10)
     is_active = factory.Faker('random_element', elements=[True, False])
 
 
@@ -101,7 +101,7 @@ class CounsellorFactory(factory.django.DjangoModelFactory):
 
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
-    phone = factory.Faker('phone_number')
+    phone = factory.Faker('msisdn')
     position = factory.Faker('text', max_nb_chars=5)
     bio = factory.Faker('sentence', nb_words=10)
     profile_picture = factory.django.ImageField()
