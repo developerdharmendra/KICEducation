@@ -34,6 +34,7 @@ class WhyStudyInline(TabularInline):
     model = WhyStudy
     tab = True
     max_num = 10
+    extra = 0
 
     def get_queryset(self, request: HttpRequest) -> models.QuerySet:
         queryset = super().get_queryset(request)
@@ -45,6 +46,7 @@ class StudyReasonInline(StackedInline):
     model = StudyReason
     tab = True
     max_num = 10
+    extra = 0
 
     def get_queryset(self, request: HttpRequest) -> models.QuerySet:
         queryset = super().get_queryset(request)
@@ -56,6 +58,7 @@ class CountryFactInline(TabularInline):
     model = CountryFact
     tab = True
     max_num = 10
+    extra = 0
 
     def get_queryset(self, request: HttpRequest) -> models.QuerySet:
         queryset = super().get_queryset(request)
@@ -67,6 +70,7 @@ class RequirementInline(TabularInline):
     model = Requirement
     tab = True
     max_num = 10
+    extra = 0
 
     def get_queryset(self, request: HttpRequest) -> models.QuerySet:
         queryset = super().get_queryset(request)
@@ -78,6 +82,7 @@ class CostAndBudgetInline(TabularInline):
     model = CostAndBudget
     tab = True
     max_num = 10
+    extra = 0
 
     def get_queryset(self, request: HttpRequest) -> models.QuerySet:
         queryset = super().get_queryset(request)
@@ -85,10 +90,11 @@ class CostAndBudgetInline(TabularInline):
         return queryset
 
 
-class StepProcessInline(TabularInline):
+class StepProcessInline(StackedInline):
     model = StepProcess
     tab = True
     max_num = 10
+    extra = 0
 
     def get_queryset(self, request: HttpRequest) -> models.QuerySet:
         queryset = super().get_queryset(request)
@@ -100,6 +106,7 @@ class FAQInline(TabularInline):
     model = FAQ
     tab = True
     max_num = 10
+    extra = 0
 
     def get_queryset(self, request: HttpRequest) -> models.QuerySet:
         queryset = super().get_queryset(request)

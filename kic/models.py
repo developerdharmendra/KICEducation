@@ -27,7 +27,11 @@ class Country(models.Model):
     class Meta:
         verbose_name_plural = 'countries'
         constraints = [
-            models.UniqueConstraint(Lower('name'), 'name', name='unique_lower_name_country'),
+            models.UniqueConstraint(
+                Lower('name'),
+                name='unique_lower_name_country',
+                violation_error_message='Country with that name already exists.',
+            ),
         ]
 
     def __str__(self):
