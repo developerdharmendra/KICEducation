@@ -12,6 +12,7 @@ from .models import (
     Achievement,
     Country,
     Counsellor,
+    Event,
     Mission,
     Service,
     Testimonial,
@@ -27,6 +28,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        context['recent_events'] = Event.objects.filter(status=Event.StatusChoices.PUBLISHED)[:3]
         context['services'] = Service.objects.all()
         context['counsellors'] = Counsellor.objects.filter(is_active=True)
         context['institutions'] = University.objects.filter(
@@ -137,3 +139,13 @@ class TestPreparationClassDetailView(DetailView):
     template_name = 'kic/test_preparation_class_detail.html'
     context_object_name = 'preparation_class'
     slug_url_kwarg = 'preparation_class_slug'
+
+
+class EventDetailView(DetailView):
+    model = Event
+    template_name = 'kic/event_detail.html'
+    context_object_name = 'event'
+    slug_url_kwarg = 'event_slug'
+
+    def get_queryset(self):
+        return Event.objects.filter(status=Event.StatusChoices.PUBLISHED)

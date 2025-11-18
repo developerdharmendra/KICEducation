@@ -6,59 +6,6 @@
 
 {% block content %}
 <!--hero section for image banner starts here-->
-
-<!-- <section class="hero video-hero">
-      <video
-        autoplay=""
-        muted=""
-        loop=""
-        playsinline=""
-        preload="auto"
-        class="svg-background banner-video"
-        poster=""
-        style="
-          background-image: url('images/zwmZqJXVW0Gwr0yUS9Zg.jpg');
-          background-size: cover;
-        "
-      >
-        <source src="{% static 'media/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <div class="container-fluid">
-        <div class="banner" style="text-align: center">
-          <div
-            class="banner-content"
-            style="align-items: center; text-align: center"
-          >
-            <h1>Find the world’s best universities and scholarships</h1>
-            <div
-              class="d-flex flex-column flex-nowrap align-items-center justify-content-center gap-4"
-            >
-              <p>Effortlessly with us!</p>
-              <div>
-                <a href="" target="_blank" class="btn-hero">
-                  <span>Apply Now</span>
-                  <svg
-                    class="external-arrow"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M17.6 18L8 8.4V17H6V5h12v2H9.4l9.6 9.6z"
-                    ></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
 <section class="banner-hero" data-sal="fade" data-sal-duration="600" data-sal-delay="100" data-sal-easing="ease">
   <img src="{% static 'images/banner.jpg' %}" alt="banner" class="img-fluid" />
 </section>
@@ -130,73 +77,43 @@
 <div class="aboutus mt-2 py-3" data-sal="fade" data-sal-duration="600" data-sal-delay="100" data-sal-easing="ease">
   <div class="container-fluid">
     <div class="row g-5">
-      <div
-        class="col-sm-5 recent-event px-5 py-4"
-        style="background-color: #e0eafc; border-radius: 10px 10px 0 0"
-        data-sal="slide-right"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
+      <div class="col-sm-5 recent-event px-5 py-4" style="background-color: #e0eafc; border-radius: 10px 10px 0 0" data-sal="slide-right" data-sal-duration="800" data-sal-delay="200">
         <h2 class="mb-0 fw-bold pt-3 footer-heading">
           Recent <span style="color: var(--color-primary)">Events</span>
         </h2>
+        {% for event in recent_events %}
         <a href="#">
           <div class="d-flex gap-4 recent my-3 align-items-center">
             <div class="">
-              <h1 class="m-0 p-0 text-success">12</h1>
-              <h4 class="m-0 pb-1 pt-0">MAY</h4>
+              {% if event.start_datetime.date != event.end_datetime.date %}
+              <h1 class="m-0 p-0 text-success">
+                {{ event.start_datetime|date:"d" }} - {{ event.end_datetime|date:"d" }}
+              </h1>
+              <h4 class="m-0 pb-1 pt-0">
+                {{ event.start_datetime|date:"M" }} - {{ event.end_datetime|date:"M" }}
+              </h4>
+              {% else %}
+              <h1 class="m-0 p-0 text-success">{{ event.start_datetime|date:"d" }}</h1>
+              <h4 class="m-0 pb-1 pt-0">{{ event.start_datetime|date:"M" }}</h4>
+              {% endif %}
               <p style="height: 2px; background-color: green"></p>
             </div>
             <div class="">
-              <h3>Udaan New Zealand Application Day</h3>
+              <h3>{{ event.title }}</h3>
               <p>
                 <i class="bi bi-clock" style="color: green"></i>
-                <span style="color: green"> 10:00 AM - 6:00 PM</span>
+                <span style="color: green">
+                  {{ event.start_datetime|date:"h:i A" }} - {{ event.end_datetime|date:"h:i A" }}
+                </span>
               </p>
             </div>
           </div>
         </a>
-
-        <a href="#">
-          <div class="d-flex gap-4 recent my-3 align-items-center">
-            <div class="">
-              <h1 class="m-0 p-0 text-success">20</h1>
-              <h4 class="m-0 pb-1 pt-0">AUG</h4>
-              <p style="height: 2px; background-color: green"></p>
-            </div>
-            <div class="">
-              <h3>International Education Fair – Dwarka</h3>
-              <p>
-                <i class="bi bi-clock" style="color: green"></i>
-                <span style="color: green"> 10:00 AM - 6:00 PM</span>
-              </p>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="d-flex gap-4 recent my-3 align-items-center">
-            <div class="">
-              <h1 class="m-0 p-0 text-success">10</h1>
-              <h4 class="m-0 pb-1 pt-0">SEP</h4>
-              <p style="height: 2px; background-color: green"></p>
-            </div>
-            <div class="">
-              <h3>Grace Edufair 2023</h3>
-              <p>
-                <i class="bi bi-clock" style="color: green"></i>
-                <span style="color: green"> 10:00 AM - 6:00 PM</span>
-              </p>
-            </div>
-          </div>
-        </a>
+        {% empty %}
+        <p class="py-2">No recent events.</p>
+        {% endfor %}
       </div>
-      <div
-        class="col-sm-7 about-content py-4"
-        data-sal="slide-left"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
+      <div class="col-sm-7 about-content py-4" data-sal="slide-left" data-sal-duration="800" data-sal-delay="200">
         <h2 class="mb-0 fw-bold pt-3 footer-heading">
           About
           <span style="color: var(--color-primary)">KIC Education</span>
@@ -425,34 +342,7 @@
 
   <div class="overflow-hidden" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100" data-sal-easing="ease-in-out">
     <div class="container-fluid">
-      <div class="row pt-3">
-        <!-- events section start -->
-        <div
-          class="col-sm-4 recent-event px-5 py-4"
-          style="background-color: #e0eafc; border-radius: 10px 10px 0 0"
-        >
-          <h2 class="mb-0 fw-bold pt-3 footer-heading">
-            <span style="color: var(--color-primary)">Events</span>
-          </h2>
-          <a href="#">
-            <div class="d-flex gap-4 recent my-3 align-items-center">
-              <div class="">
-                <h1 class="m-0 p-0 text-success">12</h1>
-                <h4 class="m-0 pb-1 pt-0">MAY</h4>
-                <p style="height: 2px; background-color: green"></p>
-              </div>
-              <div class="">
-                <h3>Udaan New Zealand Application Day</h3>
-                <p>
-                  <i class="bi bi-clock" style="color: green"></i>
-                  <span style="color: green"> 10:00 AM - 6:00 PM</span>
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <!-- events section end -->
-        
+      <div class="row pt-3 d-flex justify-content-center">
         <!-- testimonial section start -->
         <div class="col-sm-8 py-4 px-4">
           <h2 class="mb-0 pt-3">

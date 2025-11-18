@@ -15,7 +15,7 @@ from unfold.contrib.filters.admin import (
 # fmt: off
 from .models import (
     Achievement, Country, WhyStudy, CountryFact, StudyReason, Requirement,
-    CostAndBudget, StepProcess, FAQ, Counsellor, Mission, Service, Testimonial,
+    CostAndBudget, StepProcess, FAQ, Counsellor, Event, Mission, Service, Testimonial,
     TestPreparationClass, University,
 )
 # fmt: on
@@ -147,6 +147,37 @@ class CounsellorAdmin(ModelAdmin):
         'is_active',
     ]
     search_fields = ['first_name', 'last_name']
+    show_full_result_count = False
+    show_facets = admin.ShowFacets.NEVER
+
+
+@admin.register(Event)
+class EventAdmin(ModelAdmin):
+    fields = [
+        ('title', 'slug'),
+        'description',
+        'featured_image',
+        ('start_datetime', 'end_datetime'),
+        'status',
+        'is_featured',
+    ]
+    formfield_overrides = {
+        models.TextField: {'widget': TinyMCE()},
+    }
+    list_display = [
+        'title',
+        'slug',
+        'start_datetime',
+        'end_datetime',
+        'status',
+        'is_featured',
+        'created_at',
+        'updated_at',
+    ]
+    list_filter = [('is_featured', BooleanRadioFilter)]
+    list_filter_submit = True  #  add a submit button to the filter form
+    prepopulated_fields = {'slug': ['title']}
+    search_fields = ['title']
     show_full_result_count = False
     show_facets = admin.ShowFacets.NEVER
 

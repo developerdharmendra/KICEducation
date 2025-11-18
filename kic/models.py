@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.db.models.functions import Lower
@@ -312,3 +313,42 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return f'{self._meta.model_name} by {self.full_name}'
+
+
+class Event(models.Model):
+    class StatusChoices(models.TextChoices):
+        DRAFT = 'draft', 'Draft'
+        PUBLISHED = 'published', 'Published'
+        CANCELLED = 'cancelled', 'Cancelled'
+
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True)
+    description = models.TextField()
+    featured_image = models.ImageField(upload_to='events/', blank=True)
+    start_datetime = models.DateTimeField()
+    end_datetime = models.DateTimeField()
+    status = models.CharField(
+        max_length=20, choices=StatusChoices.choices, default=StatusChoices.DRAFT
+    )
+    is_featured = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['start_datetime']
+
+    def __str__(self):
+        return self.title
+
+    def clean(self) -> None:
+        super().clean()
+        if self.end_datetime <= self.start_datetime:
+            raise ValidationError({'end_datetime': 'End datetime must be after start datetime.'})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('kic:event_detail', kwargs={'event_slug': self.slug})

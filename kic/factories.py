@@ -1,11 +1,13 @@
 import factory
 from faker import Faker
 
+from django.utils import timezone
+
 # fmt: off
 from .models import (
     Achievement, Country, WhyStudy, CountryFact, StudyReason, Requirement,
-    CostAndBudget, StepProcess, FAQ, Counsellor, Mission, Service, Testimonial,
-    TestPreparationClass, University,
+    CostAndBudget, StepProcess, FAQ, Counsellor, Event, Mission, Service,
+    Testimonial, TestPreparationClass, University,
 )
 # fmt: on
 
@@ -107,6 +109,20 @@ class CounsellorFactory(factory.django.DjangoModelFactory):
     profile_picture = factory.django.ImageField()
     joined_on = factory.Faker('date')
     is_active = factory.Faker('random_element', elements=[True, False])
+
+
+class EventFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Event
+
+    title = factory.Faker('text', max_nb_chars=5)
+    description = factory.Faker('paragraph', nb_sentences=20)
+    start_datetime = factory.Faker('date_time_this_year', tzinfo=timezone.get_current_timezone())
+    end_datetime = factory.Faker(
+        'date_time_this_year', after_now=True, tzinfo=timezone.get_current_timezone()
+    )
+    status = factory.Iterator(Event.StatusChoices.values)
+    is_featured = factory.Faker('random_element', elements=[True, False])
 
 
 class MissionFactory(factory.django.DjangoModelFactory):
