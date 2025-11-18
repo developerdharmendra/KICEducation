@@ -181,7 +181,7 @@ DEFAULT_TO_EMAIL = env('DEFAULT_TO_EMAIL')  # recipient email address
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'silver',
     'height': 500,
-    'menubar': False,
+    'menubar': 'file edit view insert format tools table help',
     'plugins': 'advlist,autolink,lists,link,image,charmap,print,preview,anchor,'
     'searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,paste,'
     'code,help,wordcount',
