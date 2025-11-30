@@ -342,8 +342,11 @@ class Event(models.Model):
 
     def clean(self) -> None:
         super().clean()
-        if self.end_datetime <= self.start_datetime:
-            raise ValidationError({'end_datetime': 'End datetime must be after start datetime.'})
+        if self.start_datetime and self.end_datetime:
+            if self.end_datetime <= self.start_datetime:
+                raise ValidationError(
+                    {'end_datetime': 'End datetime must be after start datetime.'}
+                )
 
     def save(self, *args, **kwargs):
         if not self.slug:
