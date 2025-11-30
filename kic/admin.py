@@ -2,6 +2,7 @@ import logging
 
 from django.contrib import admin
 from django.db import models
+from django.utils.html import format_html
 
 from django.http import HttpRequest
 from tinymce.widgets import TinyMCE
@@ -11,6 +12,7 @@ from unfold.contrib.filters.admin import (
     ChoicesDropdownFilter,
     RelatedCheckboxFilter,
 )
+from unfold.contrib.forms.widgets import WysiwygWidget
 
 # fmt: off
 from .models import (
@@ -32,6 +34,11 @@ class AchievementAdmin(ModelAdmin):
 
 class WhyStudyInline(TabularInline):
     model = WhyStudy
+    formfield_overrides = {
+        models.CharField: {
+            'widget': WysiwygWidget,
+        }
+    }
     tab = True
     max_num = 10
     extra = 0
@@ -56,6 +63,11 @@ class StudyReasonInline(StackedInline):
 
 class CountryFactInline(TabularInline):
     model = CountryFact
+    formfield_overrides = {
+        models.CharField: {
+            'widget': WysiwygWidget,
+        }
+    }
     tab = True
     max_num = 10
     extra = 0
@@ -66,8 +78,13 @@ class CountryFactInline(TabularInline):
         return queryset
 
 
-class RequirementInline(TabularInline):
+class RequirementInline(StackedInline):
     model = Requirement
+    formfield_overrides = {
+        models.TextField: {
+            'widget': WysiwygWidget,
+        }
+    }
     tab = True
     max_num = 10
     extra = 0
@@ -125,11 +142,18 @@ class CountryAdmin(ModelAdmin):
         StepProcessInline,
         FAQInline,
     ]
-    list_display = ['name', 'slug', 'flag']
+    list_display = ['name', 'slug', 'display_flag']
     readonly_fields = ['slug']
     search_fields = ['name']
     show_full_result_count = False
     show_facets = admin.ShowFacets.NEVER
+
+    def display_flag(self, obj):
+        if obj.flag:
+            return format_html('<img src="{}" width="80" height="80" />', obj.flag.url)
+        return '-'
+
+    display_flag.short_description = 'Flag'
 
 
 @admin.register(Counsellor)
@@ -162,7 +186,9 @@ class EventAdmin(ModelAdmin):
         'is_featured',
     ]
     formfield_overrides = {
-        models.TextField: {'widget': TinyMCE()},
+        models.TextField: {
+            'widget': WysiwygWidget,
+        }
     }
     list_display = [
         'title',

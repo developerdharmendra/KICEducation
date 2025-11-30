@@ -106,11 +106,11 @@ class Requirement(models.Model):
 
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='requirements')
     level = models.CharField(max_length=20, choices=LevelChoices.choices)
-    academic = models.CharField(
-        max_length=150, help_text='Academic requirements such as minimum GPA, prior degree, etc.'
+    academic = models.TextField(
+        max_length=500, help_text='Academic requirements such as minimum GPA, prior degree, etc.'
     )
-    language = models.CharField(
-        max_length=150, help_text='Language test requirements (IELTS, PTE, TOEFL, etc.).'
+    language = models.TextField(
+        max_length=500, help_text='Language test requirements (IELTS, PTE, TOEFL, etc.).'
     )
 
     def __str__(self):
